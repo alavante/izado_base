@@ -124,7 +124,27 @@
 
     <!-- BLOQUE INDEPENDIENTE: OPCIONES -->
     <div class="card" id="cardOpciones">      <div class="card-title">🎵 Opciones</div>             <div class="barra" style="margin-bottom: 16px;">  <div class="barra-label">🎺 Voz de Señales a la Bandera:</div>  <div class="barra-botones">    <button class="barra-btn" onclick="setSenales(true)"><span class="dot" id="dotSenalesSi"></span>Sí</button>    <button class="barra-btn" onclick="setSenales(false)"><span class="dot" id="dotSenalesNo"></span>No</button>  </div></div>
-                        <div class="barra">  <div class="barra-label">💂 Guardia Militar:</div>  <div class="barra-botones">    <button class="barra-btn" onclick="setGuardia(true)"><span class="dot" id="dotGuardiaSi"></span>Sí</button>    <button class="barra-btn" onclick="setGuardia(false)"><span class="dot" id="dotGuardiaNo"></span>No</button>  </div></div>                        <div class="barra" id="seccionPresenten" style="display: none;">        <div class="barra-label">🎙️ Orden Presenten:</div>        <div class="barra-botones">          <button class="barra-btn" onclick="setPresenten('voz')"><span class="dot" id="dotPresentenVoz"></span>Voz</button>          <button class="barra-btn" onclick="setPresenten('corneta')"><span class="dot" id="dotPresentenCorneta"></span>Corneta</button>        </div>      </div>      <div style="padding: 10px; background: #0b152d; border-radius: 8px; border-left: 3px solid #10b981; margin-bottom: 12px;">        <div style="font-size: 11px; font-weight: 800; color: #38bdf8; margin-bottom: 8px;">🎵 Audio:</div>        <div class="btn-grid">          <button class="action-btn" onclick="setAcompañamiento('himno')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompHimno"></span>Himno</button>          <button class="action-btn" onclick="setAcompañamiento('corneta')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompCorneta"></span>Corneta</button>          <button class="action-btn" onclick="setAcompañamiento('chifle')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompChifle"></span>Chifle</button>          <button class="action-btn" onclick="setAcompañamiento('himno_chifle')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompHimnoChifle"></span>Himno+Chifle</button>        </div>      </div>      <div id="seccionOracion" style="display: none; padding: 10px; background: #0b152d; border-radius: 8px; border-left: 3px solid #f59e0b;">        <div style="font-size: 11px; font-weight: 800; color: #fcd34d; margin-bottom: 8px;">✝️ Oración:</div>        <div class="btn-grid">          <button class="action-btn" onclick="setOracion('corneta')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionCorneta"></span>Corneta</button>          <button class="action-btn" onclick="setOracion('Cantada')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionCantada"></span>Cantada</button>          <button class="action-btn" onclick="setOracion('leida')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionLeida"></span>Leída</button>          <button class="action-btn" onclick="setOracion('ninguna')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionNinguna"></span>Ninguna</button>        </div>      </div>   </div>                  <!-- RELOJ (standalone, fuera de PROGRAMACIÓN) -->    <div class="card" style="display: none;">      <div class="reloj-grande" id="relojStandalone">--:--:--</div>      <div class="reloj-info"><span id="husoInfoStandalone">UTC</span> | <span id="fechaInfoStandalone">--/--/----</span></div>    </div>             <!-- BARRA DE ESTADO / STOP -->
+                        <div class="barra">  <div class="barra-label">💂 Guardia Militar:</div>  <div class="barra-botones">    <button class="barra-btn" onclick="setGuardia(true)"><span class="dot" id="dotGuardiaSi"></span>Sí</button>    <button class="barra-btn" onclick="setGuardia(false)"><span class="dot" id="dotGuardiaNo"></span>No</button>  </div></div>                        <div class="barra" id="seccionPresenten" style="display: none;">        <div class="barra-label">🎙️ Orden Presenten:</div>        <div class="barra-botones">          <button class="barra-btn" onclick="setPresenten('voz')"><span class="dot" id="dotPresentenVoz"></span>Voz</button>          <button class="barra-btn" onclick="setPresenten('corneta')"><span class="dot" id="dotPresentenCorneta"></span>Corneta</button>        </div>      </div>      <div style="padding: 10px; background: #0b152d; border-radius: 8px; border-left: 3px solid #10b981; margin-bottom: 12px;">        <div style="font-size: 11px; font-weight: 800; color: #38bdf8; margin-bottom: 8px;">🎵 Audio:</div>        <div class="btn-grid">          <button class="action-btn" onclick="setAcompañamiento('himno')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompHimno"></span>Himno</button>          <button class="action-btn" onclick="setAcompañamiento('corneta')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompCorneta"></span>Corneta</button>          <button class="action-btn" onclick="setAcompañamiento('chifle')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompChifle"></span>Chifle</button>          <button class="action-btn" onclick="setAcompañamiento('himno_chifle')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompHimnoChifle"></span>Himno+Chifle</button>        </div>      </div>
+      <!-- SELECCIÓN Y SECUENCIA DE HIMNOS (SOLO EN MODO HIMNO O HIMNO+CHIFLE) -->
+      <div id="seccionHimnos" style="display: none; padding: 12px; background: #070d1e; border: 1.5px solid #1e3a8a; border-radius: 8px; margin-bottom: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <div style="font-size: 11.5px; font-weight: 800; color: #38bdf8;">🌐 SECUENCIA DE HIMNOS (P5):</div>
+          <span style="font-size: 10px; color: #94a3b8;">Descarga bajo demanda</span>
+        </div>
+        
+        <!-- LISTA DE HIMNOS ACTIVOS EN SECUENCIA -->
+        <div id="listaHimnosActivos" style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px;"></div>
+
+        <!-- CONTROLES PARA AÑADIR HIMNO EXTRANJERO -->
+        <div style="display: flex; gap: 6px; align-items: center;">
+          <select id="selHimnoExtranjero" style="flex: 1; background: #0b152d; border: 1.5px solid #38bdf8; border-radius: 6px; color: #fff; font-size: 12px; font-weight: 700; padding: 6px 8px;">
+            <option value="">-- Seleccionar país para añadir --</option>
+          </select>
+          <button type="button" class="action-btn primary" onclick="agregarHimnoExtranjero()" style="padding: 6px 12px; font-size: 11.5px; font-weight: 800; white-space: nowrap;">
+            ➕ Añadir
+          </button>
+        </div>
+      </div>      <div id="seccionOracion" style="display: none; padding: 10px; background: #0b152d; border-radius: 8px; border-left: 3px solid #f59e0b;">        <div style="font-size: 11px; font-weight: 800; color: #fcd34d; margin-bottom: 8px;">✝️ Oración:</div>        <div class="btn-grid">          <button class="action-btn" onclick="setOracion('corneta')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionCorneta"></span>Corneta</button>          <button class="action-btn" onclick="setOracion('Cantada')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionCantada"></span>Cantada</button>          <button class="action-btn" onclick="setOracion('leida')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionLeida"></span>Leída</button>          <button class="action-btn" onclick="setOracion('ninguna')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionNinguna"></span>Ninguna</button>        </div>      </div>   </div>                  <!-- RELOJ (standalone, fuera de PROGRAMACIÓN) -->    <div class="card" style="display: none;">      <div class="reloj-grande" id="relojStandalone">--:--:--</div>      <div class="reloj-info"><span id="husoInfoStandalone">UTC</span> | <span id="fechaInfoStandalone">--/--/----</span></div>    </div>             <!-- BARRA DE ESTADO / STOP -->
     <div class="status-bar" style="margin-bottom: 12px;">
       <span id="status">Esperando inicio...</span>
       <button class="status-stop" onclick="stopAll()">⏹️ STOP</button>
@@ -137,7 +157,8 @@
     </div>    <!-- SECUENCIA CONTINUA (P2-P8) -->
     <div class="card" id="cardSecuenciaContinua" style="display: none;">
       <button class="action-btn primary" id="btnSecuenciaContinua" style="width: 100%; padding: 16px; background: #0284c7; border-color: #38bdf8;" onclick="iniciarAuto()">▶️ SECUENCIA CONTINUA (P2-P8)</button>
-    </div>  </main>  <audio id="audioPlayer"></audio>     <script>
+    </div>  </main>  <audio id="audioPlayer"></audio>
+  <audio id="audioChifle"></audio>     <script>
 
   // --- BLINDAJE RUNTIME UNIVERSAL ---
   (function() {
@@ -856,13 +877,19 @@ function ejecutarSecuenciaContinuaP2P8() {
     const p = puntosContinuos[idx];
     idx++;
     if (audio) {
-      const onEnded = () => {
-        audio.removeEventListener('ended', onEnded);
-        setTimeout(reproducirPaso, 300);
-      };
-      audio.addEventListener('ended', onEnded);
+      if (p === 5 && typeof acompañamiento !== 'undefined' && (acompañamiento === 'himno' || acompañamiento === 'himno_chifle') && typeof reproducirP5SecuenciaYChifle === 'function') {
+        reproducirPunto(5, () => setTimeout(reproducirPaso, 300));
+      } else {
+        const onEnded = () => {
+          audio.removeEventListener('ended', onEnded);
+          setTimeout(reproducirPaso, 300);
+        };
+        audio.addEventListener('ended', onEnded);
+        reproducirPunto(p);
+      }
+    } else {
+      reproducirPunto(p);
     }
-    reproducirPunto(p);
     const statusEl = document.getElementById('status');
     if (statusEl) statusEl.textContent = 'Punto ' + p + ' (Secuencia Continua)';
   }
@@ -908,7 +935,26 @@ setTimeout(() => {
 }, 100);
 
 
-    var modo = 'izado', conGuardia = true, conSenales = true, modalidadPresenten = 'voz', acompañamiento = 'himno', oracion = 'corneta';audioEjecucion = 'automatico';;    var cerPuntosActivosManualIAA = [], arriado = 'manual', ejecucion = 'automatica', posicion = { tipo: 'base', lat: 37.2521, lon: -6.3675 };      const audioURLs = {'1_izado': 'audios/01_01_senales_izado.mp3', '1_arriado': 'audios/01_02_senales_arriado.mp3', '2': 'audios/02_firmes.mp3', '3_voz': 'audios/03_01_presenten_voz.mp3', '3_corneta': 'audios/03_02_presenten_corneta.wav', '4': 'audios/04_ejecutiva.wav', '5_himno': 'audios/05_01_himno.mp3', '5_chifle': 'audios/05_02_chifle.mp3', '5_corneta': 'audios/05_03_corneta.wav', '5_himno_chifle': 'audios/05_04_himno_chifle.mp3', '6': 'audios/06_descansen.wav', '7': 'audios/07_envainen.wav', '8_corneta': 'audios/event08_01_CornetaToquedeOracion.wav', '8_Cantada': 'audios/08_02_oracion_musica.mp3', '8_leida': 'audios/event08_03_VOZORACION.mp3', '8_ninguno': 'audios/event08_03_NINGUNO.mp3'};      function actualizarReloj() {      const ahora = new Date();      document.getElementById('reloj').textContent = String(ahora.getHours()).padStart(2,'0') + ':' + String(ahora.getMinutes()).padStart(2,'0') + ':' + String(ahora.getSeconds()).padStart(2,'0');      document.getElementById('fechaInfo').textContent = ahora.toLocaleDateString('es-ES');      if (typeof obtenerTextoHusoIAB === 'function') {        const lblHuso = document.getElementById('lblHusoTextoVisible');        if (lblHuso) lblHuso.textContent = obtenerTextoHusoIAB(cerHusoHorarioIAB);      }    }    actualizarReloj();    setInterval(actualizarReloj, 1000);         function setAudioEjecucion(a) {
+    var modo = 'izado', conGuardia = true, conSenales = true, modalidadPresenten = 'voz', acompañamiento = 'himno', oracion = 'corneta';audioEjecucion = 'automatico';;    var cerPuntosActivosManualIAA = [], arriado = 'manual', ejecucion = 'automatica', posicion = { tipo: 'base', lat: 37.2521, lon: -6.3675 };      const URL_BASE_IZADO_BASE = 'https://raw.githubusercontent.com/tdolarea/izado_base/main/audios/';
+
+    const audioURLs = {
+      '1_izado': URL_BASE_IZADO_BASE + '01_01_senales_izado.mp3',
+      '1_arriado': URL_BASE_IZADO_BASE + '01_02_senales_arriado.mp3',
+      '2': URL_BASE_IZADO_BASE + '02_firmes.mp3',
+      '3_voz': URL_BASE_IZADO_BASE + '03_01_presenten_voz.mp3',
+      '3_corneta': URL_BASE_IZADO_BASE + '03_02_presenten_corneta.wav',
+      '4': URL_BASE_IZADO_BASE + '04_ejecutiva.wav',
+      '5_himno': URL_BASE_IZADO_BASE + '05_01_himno.mp3',
+      '5_chifle': URL_BASE_IZADO_BASE + '05_02_chifle.mp3',
+      '5_corneta': URL_BASE_IZADO_BASE + '05_03_corneta.wav',
+      '5_himno_chifle': URL_BASE_IZADO_BASE + '05_04_himno_chifle.mp3',
+      '6': URL_BASE_IZADO_BASE + '06_descansen.wav',
+      '7': URL_BASE_IZADO_BASE + '07_envainen.wav',
+      '8_corneta': URL_BASE_IZADO_BASE + 'event08_01_CornetaToquedeOracion.wav',
+      '8_Cantada': URL_BASE_IZADO_BASE + '08_02_oracion_musica.mp3',
+      '8_leida': URL_BASE_IZADO_BASE + 'event08_03_VOZORACION.mp3',
+      '8_ninguno': URL_BASE_IZADO_BASE + '08_04_NINGUNO.mp3'
+    };      function actualizarReloj() {      const ahora = new Date();      document.getElementById('reloj').textContent = String(ahora.getHours()).padStart(2,'0') + ':' + String(ahora.getMinutes()).padStart(2,'0') + ':' + String(ahora.getSeconds()).padStart(2,'0');      document.getElementById('fechaInfo').textContent = ahora.toLocaleDateString('es-ES');      if (typeof obtenerTextoHusoIAB === 'function') {        const lblHuso = document.getElementById('lblHusoTextoVisible');        if (lblHuso) lblHuso.textContent = obtenerTextoHusoIAB(cerHusoHorarioIAB);      }    }    actualizarReloj();    setInterval(actualizarReloj, 1000);         function setAudioEjecucion(a) {
   audioEjecucion = a;
   updateDots();
   const cSec = document.getElementById('cardSecuencia');
@@ -934,7 +980,7 @@ setTimeout(() => {
     if (boxArr) boxArr.style.display = (m === 'arriado') ? 'flex' : 'none';
   }
   updateDots();
-}               function setSenales(s) { conSenales = s; calcularPuntos(); updateUI(); updateDots(); }            function setGuardia(g) { conGuardia = g; calcularPuntos(); updateUI(); updateDots(); }            function setPresenten(p) { modalidadPresenten = p; calcularPuntos(); renderPuntos(); updateUI(); updateDots(); }              function setAcompañamiento(a) { acompañamiento = a; calcularPuntos(); renderPuntos(); updateUI(); updateDots(); }           function setOracion(o) { oracion = o; renderPuntos(); updateUI();updateDots(); }          function setArriado(t) { arriado = t; document.getElementById('secArriadoManualInput').style.display = t === 'manual' ? 'block' : 'none'; document.getElementById('secArriadoOcasoDisplay').style.display = t === 'ocaso' ? 'block' : 'none'; document.getElementById('secPosicionOcaso').style.display = t === 'ocaso' ? 'block' : 'none'; updateDots(); }              function setEjecucion(t) { ejecucion = t; document.getElementById('secEjecAuto').style.display = t === 'automatica' ? 'block' : 'none'; document.getElementById('secEjecManual').style.display = t === 'manual' ? 'block' : 'none'; document.getElementById('btnEjecAuto').style.background = t === 'automatica' ? '#0c4a6e' : '#1e293b'; document.getElementById('btnEjecManual').style.background = t === 'manual' ? '#0c4a6e' : '#1e293b'; updateDots();  }              function setPosicion(tipo) { posicion.tipo = tipo; document.getElementById('secBase').style.display = tipo === 'base' ? 'block' : 'none'; document.getElementById('secGPS').style.display = tipo === 'gps' ? 'block' : 'none'; document.getElementById('secManual').style.display = tipo === 'manual' ? 'block' : 'none'; }            function calcularOcasoBase() { const base = document.getElementById('selBase').value; const bases = {'rota': {lat: 37.2521, lon: -6.3675}, 'ferrol': {lat: 43.4667, lon: -8.25}, 'cartagena': {lat: 37.6167, lon: -0.9833}, 'sanfernando': {lat: 36.45, lon: -6.19}, 'laspalmas': {lat: 28, lon: -15.57}, 'marin': {lat: 42.39, lon: -8.75}, 'mahon': {lat: 39.87, lon: 4.27}, 'ceuta': {lat: 35.89, lon: -5.32}}; if (bases[base]) { posicion.lat = bases[base].lat; posicion.lon = bases[base].lon; calcularOcaso(); } }            function obtenerGPS() { if (navigator.geolocation) { navigator.geolocation.getCurrentPosition((pos) => { posicion.lat = pos.coords.latitude; posicion.lon = pos.coords.longitude; document.getElementById('gpsStatus').textContent = '✅ GPS'; calcularOcaso(); }, (err) => { document.getElementById('gpsStatus').textContent = '❌ Error'; }); } }            function guardarPosicion() { posicion.lat = parseFloat(document.getElementById('latInput').value); posicion.lon = parseFloat(document.getElementById('lonInput').value); if (!isNaN(posicion.lat) && !isNaN(posicion.lon)) { calcularOcaso(); } }            function calcularOcaso() { const ahora = new Date(); const dia = ahora.getDate(), mes = ahora.getMonth()+1; const diaDelAño = Math.floor((mes-1)*30.44+dia); const latRad = posicion.lat*Math.PI/180, lonRad = posicion.lon*Math.PI/180; const declinacion = 23.44*Math.sin((284+diaDelAño)*Math.PI/180)*Math.PI/180; const cosH = -Math.tan(latRad)*Math.tan(declinacion); const h = (cosH >= -1 && cosH <= 1) ? Math.acos(cosH) : 0; let minutosUTC = (12+h*180/Math.PI/15)*60-(posicion.lon*4); const husoLocal = -(ahora.getTimezoneOffset()/60); minutosUTC += husoLocal*60; while (minutosUTC >= 1440) minutosUTC -= 1440; while (minutosUTC < 0) minutosUTC += 1440; const horas = Math.floor(minutosUTC/60), mins = Math.floor(minutosUTC%60); document.getElementById('horaOcaso').textContent = String(horas).padStart(2,'0')+':'+String(mins).padStart(2,'0'); }            function calcularPuntos() { const tieneHimno = (acompañamiento === 'himno' || acompañamiento === 'himno_chifle'); cerPuntosActivosManualIAA = []; if (modo === 'izado') { if (conGuardia) { cerPuntosActivosManualIAA = [1,2,3,5,6,7]; if (tieneHimno) cerPuntosActivosManualIAA.splice(3,0,4); } else { cerPuntosActivosManualIAA = [1,5]; if (tieneHimno) cerPuntosActivosManualIAA.splice(1,0,4); } } else { if (conGuardia) { cerPuntosActivosManualIAA = [1,2,3,5,6,7,8]; if (tieneHimno) cerPuntosActivosManualIAA.splice(3,0,4); } else { cerPuntosActivosManualIAA = [1,5,8]; if (tieneHimno) cerPuntosActivosManualIAA.splice(1,0,4); } } if (!conSenales) { cerPuntosActivosManualIAA = cerPuntosActivosManualIAA.filter(p => p !== 1); } renderPuntos(); }        function obtenerHorasCalculadasCeremonial() {
+}               function setSenales(s) { conSenales = s; calcularPuntos(); updateUI(); updateDots(); }            function setGuardia(g) { conGuardia = g; calcularPuntos(); updateUI(); updateDots(); }            function setPresenten(p) { modalidadPresenten = p; calcularPuntos(); renderPuntos(); updateUI(); updateDots(); }              function setAcompañamiento(a) { acompañamiento = a; calcularPuntos(); renderPuntos(); updateUI(); updateDots(); if (typeof refrescarVisibilidadSeccionHimnos === 'function') refrescarVisibilidadSeccionHimnos(); }           function setOracion(o) { oracion = o; renderPuntos(); updateUI();updateDots(); }          function setArriado(t) { arriado = t; document.getElementById('secArriadoManualInput').style.display = t === 'manual' ? 'block' : 'none'; document.getElementById('secArriadoOcasoDisplay').style.display = t === 'ocaso' ? 'block' : 'none'; document.getElementById('secPosicionOcaso').style.display = t === 'ocaso' ? 'block' : 'none'; updateDots(); }              function setEjecucion(t) { ejecucion = t; document.getElementById('secEjecAuto').style.display = t === 'automatica' ? 'block' : 'none'; document.getElementById('secEjecManual').style.display = t === 'manual' ? 'block' : 'none'; document.getElementById('btnEjecAuto').style.background = t === 'automatica' ? '#0c4a6e' : '#1e293b'; document.getElementById('btnEjecManual').style.background = t === 'manual' ? '#0c4a6e' : '#1e293b'; updateDots();  }              function setPosicion(tipo) { posicion.tipo = tipo; document.getElementById('secBase').style.display = tipo === 'base' ? 'block' : 'none'; document.getElementById('secGPS').style.display = tipo === 'gps' ? 'block' : 'none'; document.getElementById('secManual').style.display = tipo === 'manual' ? 'block' : 'none'; }            function calcularOcasoBase() { const base = document.getElementById('selBase').value; const bases = {'rota': {lat: 37.2521, lon: -6.3675}, 'ferrol': {lat: 43.4667, lon: -8.25}, 'cartagena': {lat: 37.6167, lon: -0.9833}, 'sanfernando': {lat: 36.45, lon: -6.19}, 'laspalmas': {lat: 28, lon: -15.57}, 'marin': {lat: 42.39, lon: -8.75}, 'mahon': {lat: 39.87, lon: 4.27}, 'ceuta': {lat: 35.89, lon: -5.32}}; if (bases[base]) { posicion.lat = bases[base].lat; posicion.lon = bases[base].lon; calcularOcaso(); } }            function obtenerGPS() { if (navigator.geolocation) { navigator.geolocation.getCurrentPosition((pos) => { posicion.lat = pos.coords.latitude; posicion.lon = pos.coords.longitude; document.getElementById('gpsStatus').textContent = '✅ GPS'; calcularOcaso(); }, (err) => { document.getElementById('gpsStatus').textContent = '❌ Error'; }); } }            function guardarPosicion() { posicion.lat = parseFloat(document.getElementById('latInput').value); posicion.lon = parseFloat(document.getElementById('lonInput').value); if (!isNaN(posicion.lat) && !isNaN(posicion.lon)) { calcularOcaso(); } }            function calcularOcaso() { const ahora = new Date(); const dia = ahora.getDate(), mes = ahora.getMonth()+1; const diaDelAño = Math.floor((mes-1)*30.44+dia); const latRad = posicion.lat*Math.PI/180, lonRad = posicion.lon*Math.PI/180; const declinacion = 23.44*Math.sin((284+diaDelAño)*Math.PI/180)*Math.PI/180; const cosH = -Math.tan(latRad)*Math.tan(declinacion); const h = (cosH >= -1 && cosH <= 1) ? Math.acos(cosH) : 0; let minutosUTC = (12+h*180/Math.PI/15)*60-(posicion.lon*4); const husoLocal = -(ahora.getTimezoneOffset()/60); minutosUTC += husoLocal*60; while (minutosUTC >= 1440) minutosUTC -= 1440; while (minutosUTC < 0) minutosUTC += 1440; const horas = Math.floor(minutosUTC/60), mins = Math.floor(minutosUTC%60); document.getElementById('horaOcaso').textContent = String(horas).padStart(2,'0')+':'+String(mins).padStart(2,'0'); }            function calcularPuntos() { const tieneHimno = (acompañamiento === 'himno' || acompañamiento === 'himno_chifle'); cerPuntosActivosManualIAA = []; if (modo === 'izado') { if (conGuardia) { cerPuntosActivosManualIAA = [1,2,3,5,6,7]; if (tieneHimno) cerPuntosActivosManualIAA.splice(3,0,4); } else { cerPuntosActivosManualIAA = [1,5]; if (tieneHimno) cerPuntosActivosManualIAA.splice(1,0,4); } } else { if (conGuardia) { cerPuntosActivosManualIAA = [1,2,3,5,6,7,8]; if (tieneHimno) cerPuntosActivosManualIAA.splice(3,0,4); } else { cerPuntosActivosManualIAA = [1,5,8]; if (tieneHimno) cerPuntosActivosManualIAA.splice(1,0,4); } } if (!conSenales) { cerPuntosActivosManualIAA = cerPuntosActivosManualIAA.filter(p => p !== 1); } renderPuntos(); }        function obtenerHorasCalculadasCeremonial() {
   let horaEv = (typeof cerHoraObjetivoIAB !== 'undefined' && cerHoraObjetivoIAB) ? cerHoraObjetivoIAB : '08:00';
   let partes = horaEv.split(':');
   let hh = parseInt(partes[0], 10) || 0;
@@ -975,5 +1021,256 @@ function renderPuntos() {
     btn.onclick = () => reproducirPunto(p);
     grid.appendChild(btn);
   }
-}          function getAudioURL(p)   { if (p === 1) return modo === 'izado' ? audioURLs['1_izado'] : audioURLs['1_arriado'];    if (p === 2) return modo === 'izado' ? audioURLs['2'] : audioURLs['2'];   if (p === 3) return modalidadPresenten === 'voz' ? audioURLs['3_voz'] : audioURLs['3_corneta'];    if (p === 4) return modo === 'izado' ? audioURLs['4'] : audioURLs['4'];   if (p === 5) return audioURLs['5_'+acompañamiento] || audioURLs['5_himno'];     if (p === 6) return modo === 'izado' ? audioURLs['6'] : audioURLs['6'];   if (p === 7) return modo === 'izado' ? audioURLs['7'] : audioURLs['7'];   if (p === 8) {  if (oracion === 'ninguno') return audioURLs['8_ninguno'];  if (oracion === 'corneta') return audioURLs['8_corneta'];  if (oracion === 'Cantada') return audioURLs['8_Cantada'];  if (oracion === 'leida') return audioURLs['8_leida'];}                                                                                                                                                }        function reproducirPunto(p) { const url = getAudioURL(p); if (url) { document.getElementById('audioPlayer').src = url; document.getElementById('audioPlayer').play(); document.getElementById('status').textContent = 'Punto '+p; } }                   function stopAll() { document.getElementById('audioPlayer').pause(); document.getElementById('status').textContent = 'Detenido'; }                    function iniciarAutomatica() { const hora = document.getElementById('horaIzado').value; if (hora) { const [h,m] = hora.split(':'); const t = new Date(); t.setHours(parseInt(h), parseInt(m), 0); const interval = setInterval(() => { const diff = t - new Date(); if (diff <= 0) { clearInterval(interval); reproducirPunto(1); } else { const mins = Math.floor(diff/60000), segs = Math.floor((diff%60000)/1000); } }, 1000); } }                function reproducirManualT5() { reproducirPunto(1); }                    function iniciarAuto() {  if (cerPuntosActivosManualIAA.length > 1) {    let idx = 1;    const audio = document.getElementById('audioPlayer');        const siguiente = () => {      if (idx >= cerPuntosActivosManualIAA.length) {        document.getElementById('status').textContent = '✅ SECUENCIA COMPLETADA';        return;      }            reproducirPunto(cerPuntosActivosManualIAA[idx]);      idx++;            audio.addEventListener('ended', () => {        setTimeout(siguiente, 500);      }, { once: true });    };        siguiente();  }}                function updateUI() { document.getElementById('seccionPresenten').style.display = (conGuardia && cerPuntosActivosManualIAA.includes(3)) ? 'flex' : 'none'; document.getElementById('seccionOracion').style.display = cerPuntosActivosManualIAA.includes(8) ? 'block' : 'none'; }              calcularPuntos();    updateUI();    updateDots();    setPosicion('base');    setArriado('manual');    setEjecucion('automatica');    setModo('izado');                 window.addEventListener('DOMContentLoaded', function() {  calcularPuntos();  updateUI();  updateDots();  setPosicion('base');  setArriado('manual');  setEjecucion('automatica');  setModo('izado');  document.getElementById('cardProgramacion').style.display = 'block';});      // Tabla de husos NATO    const husoNATO = ['Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y'];        function getHusoNATO(offsetHoras) {      // offsetHoras: número negativo = oeste, positivo = este      // NATO Z = UTC (0)      const idx = Math.round(offsetHoras + 12);      return husoNATO[Math.max(0, Math.min(24, idx))] || 'Z';    }        function actualizarHoraIzadoDisplay() {      const ahora = new Date();      const hh = String(ahora.getHours()).padStart(2, '0');      const mm = String(ahora.getMinutes()).padStart(2, '0');      document.getElementById('horaActualIzado').textContent = hh + ':' + mm;            const offsetMinutos = ahora.getTimezoneOffset();      const offsetHoras = -offsetMinutos / 60;      const huso = getHusoNATO(offsetHoras);      document.getElementById('husoNATOIzado').textContent = huso;    }        function actualizarHoraIzado() {      // Se ejecuta cuando el usuario cambia el input type="time"      // La variable horaIzado ya se actualiza automáticamente    }        // Actualizar cada segundo    setInterval(actualizarHoraIzadoDisplay, 1000);    actualizarHoraIzadoDisplay(); // Llamada inicial            function abrirModalHora() {      const horaActual = document.getElementById('horaIzado').value;      document.getElementById('inputHoraModalIzado').value = horaActual;      document.getElementById('modalEditarHora').style.display = 'flex';    }        function cerrarModalHora() {      document.getElementById('modalEditarHora').style.display = 'none';    }        function confirmarHoraIzado() {      const nuevaHora = document.getElementById('inputHoraModalIzado').value;      document.getElementById('horaIzado').value = nuevaHora;      document.getElementById('modalEditarHora').style.display = 'none';    }        // Cerrar modal al pulsar ESC    document.addEventListener('keydown', (e) => {      if (e.key === 'Escape') cerrarModalHora();    });        // Cerrar modal al hacer click fuera del cuadro    document.getElementById('modalEditarHora').addEventListener('click', (e) => {      if (e.target.id === 'modalEditarHora') cerrarModalHora();    });        // ===== MÓDULO DE PROGRAMACIÓN HORARIA ADAPTADO =====    function refrescarPosicionYHoraEnPantalla() {      const ahora = new Date();      const hh = String(ahora.getHours()).padStart(2, '0');      const mm = String(ahora.getMinutes()).padStart(2, '0');            // Actualizar hora en display      document.getElementById('horaActualIzado').textContent = hh + ':' + mm;            // Actualizar huso horario      const offsetMinutos = ahora.getTimezoneOffset();      const offsetHoras = -offsetMinutos / 60;      const idx = Math.round(offsetHoras + 12);      const husoNATO = ['Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y'];      const huso = husoNATO[Math.max(0, Math.min(24, idx))] || 'Z';      document.getElementById('husoNATOIzado').textContent = huso;      document.getElementById('husoInfo').textContent = 'UTC ' + (offsetHoras >= 0 ? '+' : '') + offsetHoras;    }    function cambiarHusoHorario(val) {      // En contexto terrestre, el huso es automático según localización      // Esta función se utiliza para override manual si fuera necesario      const offsetMinutos = new Date().getTimezoneOffset();      const offsetHoras = -offsetMinutos / 60;      document.getElementById('husoInfo').textContent = 'UTC ' + (offsetHoras >= 0 ? '+' : '') + offsetHoras;      refrescarPosicionYHoraEnPantalla();    }    function calcularHoraOcaso(lat, lon) {      const ahora = new Date();      const dia = ahora.getDate(), mes = ahora.getMonth() + 1;      const diaDelAño = Math.floor((mes - 1) * 30.44 + dia);            const latRad = lat * Math.PI / 180;      const lonRad = lon * Math.PI / 180;      const declinacion = 23.44 * Math.sin((284 + diaDelAño) * Math.PI / 180) * Math.PI / 180;      const cosH = -Math.tan(latRad) * Math.tan(declinacion);      const h = (cosH >= -1 && cosH <= 1) ? Math.acos(cosH) : 0;            let minutosUTC = (12 + h * 180 / Math.PI / 15) * 60 - (lon * 4);      const husoLocal = -(ahora.getTimezoneOffset() / 60);      minutosUTC += husoLocal * 60;            while (minutosUTC >= 1440) minutosUTC -= 1440;      while (minutosUTC < 0) minutosUTC += 1440;            const horas = Math.floor(minutosUTC / 60);      const mins = Math.floor(minutosUTC % 60);            return String(horas).padStart(2, '0') + ':' + String(mins).padStart(2, '0');    }    function actualizarHoraObjetivo(nuevaHora) {      const input = document.getElementById('horaIzado');      if (input) {        input.value = nuevaHora;        refrescarPosicionYHoraEnPantalla();      }    }    
-  </script>    <!-- MODAL EDITAR HORA IZADO -->    <div id="modalEditarHora" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">      <div style="background: #0f172a; border: 2px solid #0284c7; border-radius: 12px; padding: 24px; width: 90%; max-width: 300px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">        <div style="font-size: 14px; font-weight: 800; color: #38bdf8; margin-bottom: 16px;">📌 EDITAR HORA IZADO</div>        <div style="margin-bottom: 16px;">          <div style="font-size: 11px; color: #94a3b8; margin-bottom: 6px;">Hora:</div>          <input type="time" id="inputHoraModalIzado" style="width: 100%; padding: 12px; background: #1e293b; border: 1.5px solid #0284c7; border-radius: 6px; color: #38bdf8; font-weight: 800; font-size: 16px; font-family: 'Courier New', monospace;">        </div>        <div style="display: flex; gap: 8px;">          <button onclick="confirmarHoraIzado()" style="flex: 1; padding: 12px; background: #10b981; border: 1.5px solid #10b981; border-radius: 6px; color: white; font-weight: 800; cursor: pointer; font-size: 12px;">✅ Guardar</button>          <button onclick="cerrarModalHora()" style="flex: 1; padding: 12px; background: #ef4444; border: 1.5px solid #ef4444; border-radius: 6px; color: white; font-weight: 800; cursor: pointer; font-size: 12px;">❌ Cancelar</button>        </div>      </div>    </div>  </body></html>
+}          function getAudioURL(p)   { if (p === 1) return modo === 'izado' ? audioURLs['1_izado'] : audioURLs['1_arriado'];    if (p === 2) return modo === 'izado' ? audioURLs['2'] : audioURLs['2'];   if (p === 3) return modalidadPresenten === 'voz' ? audioURLs['3_voz'] : audioURLs['3_corneta'];    if (p === 4) return modo === 'izado' ? audioURLs['4'] : audioURLs['4'];   if (p === 5) return audioURLs['5_'+acompañamiento] || audioURLs['5_himno'];     if (p === 6) return modo === 'izado' ? audioURLs['6'] : audioURLs['6'];   if (p === 7) return modo === 'izado' ? audioURLs['7'] : audioURLs['7'];   if (p === 8) {  if (oracion === 'ninguno') return audioURLs['8_ninguno'];  if (oracion === 'corneta') return audioURLs['8_corneta'];  if (oracion === 'Cantada') return audioURLs['8_Cantada'];  if (oracion === 'leida') return audioURLs['8_leida'];}                                                                                                                                                }        async function reproducirPunto(p, onFinishedCallback) {
+  if (p === 5 && typeof acompañamiento !== 'undefined' && (acompañamiento === 'himno' || acompañamiento === 'himno_chifle') && typeof reproducirP5SecuenciaYChifle === 'function') {
+    reproducirP5SecuenciaYChifle(onFinishedCallback);
+    return;
+  }
+  const rawUrl = getAudioURL(p);
+  const audio = document.getElementById('audioPlayer');
+  if (rawUrl && audio) {
+    const urlEfectiva = (typeof obtenerAudioConCache === 'function') ? await obtenerAudioConCache(rawUrl) : rawUrl;
+    audio.src = urlEfectiva;
+    if (onFinishedCallback) {
+      audio.onended = () => {
+        audio.onended = null;
+        onFinishedCallback();
+      };
+    }
+    audio.play().catch(e => console.warn('Error audio.play en punto ' + p + ':', e));
+    const statusEl = document.getElementById('status');
+    if (statusEl) statusEl.textContent = 'Punto ' + p;
+  }
+}                   function stopAll() {
+  const aP = document.getElementById('audioPlayer');
+  const aCh = document.getElementById('audioChifle');
+  if (aP) { aP.pause(); aP.ontimeupdate = null; aP.onended = null; }
+  if (aCh) { aCh.pause(); aCh.src = ''; }
+  document.getElementById('status').textContent = 'Detenido';
+}                    function iniciarAutomatica() { const hora = document.getElementById('horaIzado').value; if (hora) { const [h,m] = hora.split(':'); const t = new Date(); t.setHours(parseInt(h), parseInt(m), 0); const interval = setInterval(() => { const diff = t - new Date(); if (diff <= 0) { clearInterval(interval); reproducirPunto(1); } else { const mins = Math.floor(diff/60000), segs = Math.floor((diff%60000)/1000); } }, 1000); } }                function reproducirManualT5() { reproducirPunto(1); }                    function iniciarAuto() {  if (cerPuntosActivosManualIAA.length > 1) {    let idx = 1;    const audio = document.getElementById('audioPlayer');        const siguiente = () => {
+      if (idx >= cerPuntosActivosManualIAA.length) {
+        document.getElementById('status').textContent = '✅ SECUENCIA COMPLETADA';
+        return;
+      }
+      const puntoActual = cerPuntosActivosManualIAA[idx];
+      idx++;
+      if (puntoActual === 5 && typeof acompañamiento !== 'undefined' && (acompañamiento === 'himno' || acompañamiento === 'himno_chifle') && typeof reproducirP5SecuenciaYChifle === 'function') {
+        reproducirPunto(5, () => setTimeout(siguiente, 500));
+      } else {
+        reproducirPunto(puntoActual);
+        audio.addEventListener('ended', () => { setTimeout(siguiente, 500); }, { once: true });
+      }
+    };        siguiente();  }}                function updateUI() { document.getElementById('seccionPresenten').style.display = (conGuardia && cerPuntosActivosManualIAA.includes(3)) ? 'flex' : 'none'; document.getElementById('seccionOracion').style.display = cerPuntosActivosManualIAA.includes(8) ? 'block' : 'none'; }              calcularPuntos();    updateUI();    updateDots();    setPosicion('base');    setArriado('manual');    setEjecucion('automatica');    setModo('izado');                 window.addEventListener('DOMContentLoaded', function() {  calcularPuntos();  updateUI();  updateDots();  setPosicion('base');  setArriado('manual');  setEjecucion('automatica');  setModo('izado');  document.getElementById('cardProgramacion').style.display = 'block';});      // Tabla de husos NATO    const husoNATO = ['Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y'];        function getHusoNATO(offsetHoras) {      // offsetHoras: número negativo = oeste, positivo = este      // NATO Z = UTC (0)      const idx = Math.round(offsetHoras + 12);      return husoNATO[Math.max(0, Math.min(24, idx))] || 'Z';    }        function actualizarHoraIzadoDisplay() {      const ahora = new Date();      const hh = String(ahora.getHours()).padStart(2, '0');      const mm = String(ahora.getMinutes()).padStart(2, '0');      document.getElementById('horaActualIzado').textContent = hh + ':' + mm;            const offsetMinutos = ahora.getTimezoneOffset();      const offsetHoras = -offsetMinutos / 60;      const huso = getHusoNATO(offsetHoras);      document.getElementById('husoNATOIzado').textContent = huso;    }        function actualizarHoraIzado() {      // Se ejecuta cuando el usuario cambia el input type="time"      // La variable horaIzado ya se actualiza automáticamente    }        // Actualizar cada segundo    setInterval(actualizarHoraIzadoDisplay, 1000);    actualizarHoraIzadoDisplay(); // Llamada inicial            function abrirModalHora() {      const horaActual = document.getElementById('horaIzado').value;      document.getElementById('inputHoraModalIzado').value = horaActual;      document.getElementById('modalEditarHora').style.display = 'flex';    }        function cerrarModalHora() {      document.getElementById('modalEditarHora').style.display = 'none';    }        function confirmarHoraIzado() {      const nuevaHora = document.getElementById('inputHoraModalIzado').value;      document.getElementById('horaIzado').value = nuevaHora;      document.getElementById('modalEditarHora').style.display = 'none';    }        // Cerrar modal al pulsar ESC    document.addEventListener('keydown', (e) => {      if (e.key === 'Escape') cerrarModalHora();    });        // Cerrar modal al hacer click fuera del cuadro    document.getElementById('modalEditarHora').addEventListener('click', (e) => {      if (e.target.id === 'modalEditarHora') cerrarModalHora();    });        // ===== MÓDULO DE PROGRAMACIÓN HORARIA ADAPTADO =====    function refrescarPosicionYHoraEnPantalla() {      const ahora = new Date();      const hh = String(ahora.getHours()).padStart(2, '0');      const mm = String(ahora.getMinutes()).padStart(2, '0');            // Actualizar hora en display      document.getElementById('horaActualIzado').textContent = hh + ':' + mm;            // Actualizar huso horario      const offsetMinutos = ahora.getTimezoneOffset();      const offsetHoras = -offsetMinutos / 60;      const idx = Math.round(offsetHoras + 12);      const husoNATO = ['Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y'];      const huso = husoNATO[Math.max(0, Math.min(24, idx))] || 'Z';      document.getElementById('husoNATOIzado').textContent = huso;      document.getElementById('husoInfo').textContent = 'UTC ' + (offsetHoras >= 0 ? '+' : '') + offsetHoras;    }    function cambiarHusoHorario(val) {      // En contexto terrestre, el huso es automático según localización      // Esta función se utiliza para override manual si fuera necesario      const offsetMinutos = new Date().getTimezoneOffset();      const offsetHoras = -offsetMinutos / 60;      document.getElementById('husoInfo').textContent = 'UTC ' + (offsetHoras >= 0 ? '+' : '') + offsetHoras;      refrescarPosicionYHoraEnPantalla();    }    function calcularHoraOcaso(lat, lon) {      const ahora = new Date();      const dia = ahora.getDate(), mes = ahora.getMonth() + 1;      const diaDelAño = Math.floor((mes - 1) * 30.44 + dia);            const latRad = lat * Math.PI / 180;      const lonRad = lon * Math.PI / 180;      const declinacion = 23.44 * Math.sin((284 + diaDelAño) * Math.PI / 180) * Math.PI / 180;      const cosH = -Math.tan(latRad) * Math.tan(declinacion);      const h = (cosH >= -1 && cosH <= 1) ? Math.acos(cosH) : 0;            let minutosUTC = (12 + h * 180 / Math.PI / 15) * 60 - (lon * 4);      const husoLocal = -(ahora.getTimezoneOffset() / 60);      minutosUTC += husoLocal * 60;            while (minutosUTC >= 1440) minutosUTC -= 1440;      while (minutosUTC < 0) minutosUTC += 1440;            const horas = Math.floor(minutosUTC / 60);      const mins = Math.floor(minutosUTC % 60);            return String(horas).padStart(2, '0') + ':' + String(mins).padStart(2, '0');    }    function actualizarHoraObjetivo(nuevaHora) {      const input = document.getElementById('horaIzado');      if (input) {        input.value = nuevaHora;        refrescarPosicionYHoraEnPantalla();      }    }    
+  
+
+  // =========================================================================
+  // MÓDULO P5: SECUENCIA DE HIMNOS Y DOBLE REPRODUCTOR CHIFLE (PASIVO / SEGURO)
+  // =========================================================================
+  const CATALOGO_HIMNOS_P5 = [{"name": "Afghanistan", "file": "Afghanistan.mp3"}, {"name": "Albania", "file": "Albania.mp3"}, {"name": "Alemania", "file": "Alemania.mp3"}, {"name": "Angola", "file": "Angola.mp3"}, {"name": "Antigua Barbuda", "file": "Antigua_Barbuda.mp3"}, {"name": "Antillas Holandesas", "file": "Antillas_Holandesas.mp3"}, {"name": "Arabia Saudita", "file": "Arabia_Saudita.mp3"}, {"name": "Argelia", "file": "Argelia.mp3"}, {"name": "Argentina", "file": "Argentina.mp3"}, {"name": "Armenia", "file": "Armenia.mp3"}, {"name": "Aruba", "file": "Aruba.mp3"}, {"name": "Australia", "file": "Australia.mp3"}, {"name": "Austria", "file": "Austria.mp3"}, {"name": "Azerbaiyan", "file": "Azerbaiyan.mp3"}, {"name": "Bahamas", "file": "Bahamas.mp3"}, {"name": "Bahrein", "file": "Bahrein.mp3"}, {"name": "Banglades", "file": "Banglades.mp3"}, {"name": "Barbados", "file": "Barbados.mp3"}, {"name": "Belgica", "file": "Belgica.mp3"}, {"name": "Belice", "file": "Belice.mp3"}, {"name": "Benin", "file": "Benin.mp3"}, {"name": "Bielorusia", "file": "Bielorusia.mp3"}, {"name": "Bolivia", "file": "Bolivia.mp3"}, {"name": "Bosnia H", "file": "Bosnia_H.mp3"}, {"name": "Botsuana", "file": "Botsuana.mp3"}, {"name": "Brasil", "file": "Brasil.mp3"}, {"name": "Brunei", "file": "Brunei.mp3"}, {"name": "Bulgaria", "file": "Bulgaria.mp3"}, {"name": "Cabo Verde", "file": "Cabo_Verde.mp3"}, {"name": "Camboya", "file": "Camboya.mp3"}, {"name": "Camerun", "file": "Camerun.mp3"}, {"name": "Canada", "file": "Canada.mp3"}, {"name": "Chad", "file": "Chad.mp3"}, {"name": "Chile", "file": "Chile.mp3"}, {"name": "China", "file": "China.mp3"}, {"name": "Colombia", "file": "Colombia.mp3"}, {"name": "Congo", "file": "Congo.mp3"}, {"name": "Corea Sur", "file": "Corea_Sur.mp3"}, {"name": "Costa Marfil", "file": "Costa_Marfil.mp3"}, {"name": "Costa Rica", "file": "Costa_Rica.mp3"}, {"name": "Croacia", "file": "Croacia.mp3"}, {"name": "Cuba", "file": "Cuba.mp3"}, {"name": "Dinamarca", "file": "Dinamarca.mp3"}, {"name": "Dinamarca MR", "file": "Dinamarca_MR.mp3"}, {"name": "Dominica", "file": "Dominica.mp3"}, {"name": "Ecuador", "file": "Ecuador.mp3"}, {"name": "EEUU", "file": "EEUU.mp3"}, {"name": "Egipto", "file": "Egipto.mp3"}, {"name": "Emiratos", "file": "Emiratos.mp3"}, {"name": "Eritrea", "file": "Eritrea.mp3"}, {"name": "Eslovaquia", "file": "Eslovaquia.mp3"}, {"name": "Eslovenia", "file": "Eslovenia.mp3"}, {"name": "Espania corto", "file": "Espania_corto.mp3"}, {"name": "Espania largo", "file": "Espania_largo.mp3"}, {"name": "Estonia", "file": "Estonia.mp3"}, {"name": "EU", "file": "EU.mp3"}, {"name": "Filipinas", "file": "Filipinas.mp3"}, {"name": "Finlandia", "file": "Finlandia.mp3"}, {"name": "Francia", "file": "Francia.mp3"}, {"name": "Gabon", "file": "Gabon.mp3"}, {"name": "Gambia", "file": "Gambia.mp3"}, {"name": "Georgia", "file": "Georgia.mp3"}, {"name": "Ghana", "file": "Ghana.mp3"}, {"name": "Grecia", "file": "Grecia.mp3"}, {"name": "Guatemala", "file": "Guatemala.mp3"}, {"name": "Guayana", "file": "Guayana.mp3"}, {"name": "Guinea", "file": "Guinea.mp3"}, {"name": "Guinea Bissau", "file": "Guinea_Bissau.mp3"}, {"name": "Guinea Ecuatorial", "file": "Guinea_Ecuatorial.mp3"}, {"name": "Haiti", "file": "Haiti.mp3"}, {"name": "Honduras", "file": "Honduras.mp3"}, {"name": "Hungria", "file": "Hungria.mp3"}, {"name": "India", "file": "India.mp3"}, {"name": "Indonesia", "file": "Indonesia.mp3"}, {"name": "Irak", "file": "Irak.mp3"}, {"name": "Irlanda", "file": "Irlanda.mp3"}, {"name": "Islandia", "file": "Islandia.mp3"}, {"name": "Israel", "file": "Israel.mp3"}, {"name": "Italia", "file": "Italia.mp3"}, {"name": "Jamaica", "file": "Jamaica.mp3"}, {"name": "Japon", "file": "Japon.mp3"}, {"name": "Jordania", "file": "Jordania.mp3"}, {"name": "Kazajistan", "file": "Kazajistan.mp3"}, {"name": "Kenia", "file": "Kenia.mp3"}, {"name": "Kuwait", "file": "Kuwait.mp3"}, {"name": "Laos", "file": "Laos.mp3"}, {"name": "Lesoto", "file": "Lesoto.mp3"}, {"name": "Letonia", "file": "Letonia.mp3"}, {"name": "Libano", "file": "Libano.mp3"}, {"name": "Liberia", "file": "Liberia.mp3"}, {"name": "Libia", "file": "Libia.mp3"}, {"name": "Liechtenstein", "file": "Liechtenstein.mp3"}, {"name": "Lituania", "file": "Lituania.mp3"}, {"name": "Luxemburgo", "file": "Luxemburgo.mp3"}, {"name": "Macedonia", "file": "Macedonia.mp3"}, {"name": "Madagascar", "file": "Madagascar.mp3"}, {"name": "Malasia", "file": "Malasia.mp3"}, {"name": "Maldivas", "file": "Maldivas.mp3"}, {"name": "Mali", "file": "Mali.mp3"}, {"name": "Malta", "file": "Malta.mp3"}, {"name": "Marruecos", "file": "Marruecos.mp3"}, {"name": "Mauricio", "file": "Mauricio.mp3"}, {"name": "Mauritania", "file": "Mauritania.mp3"}, {"name": "Mejico", "file": "Mejico.mp3"}, {"name": "Moldavia", "file": "Moldavia.mp3"}, {"name": "Monaco", "file": "Monaco.mp3"}, {"name": "Montenegro", "file": "Montenegro.mp3"}, {"name": "Mozambique", "file": "Mozambique.mp3"}, {"name": "Myanmar", "file": "Myanmar.mp3"}, {"name": "Namibia", "file": "Namibia.mp3"}, {"name": "Nepal", "file": "Nepal.mp3"}, {"name": "Nicaragua", "file": "Nicaragua.mp3"}, {"name": "Ninguno", "file": "Ninguno.mp3"}, {"name": "Noruega", "file": "Noruega.mp3"}, {"name": "Nueva Zelanda", "file": "Nueva_Zelanda.mp3"}, {"name": "Oman", "file": "Oman.mp3"}, {"name": "OTAN", "file": "OTAN.mp3"}, {"name": "Paises Bajos", "file": "Paises_Bajos.mp3"}, {"name": "Pakistan", "file": "Pakistan.mp3"}, {"name": "Panama", "file": "Panama.mp3"}, {"name": "Peru", "file": "Peru.mp3"}, {"name": "Polonia", "file": "Polonia.mp3"}, {"name": "Portugal", "file": "Portugal.mp3"}, {"name": "Puerto Rico", "file": "Puerto_Rico.mp3"}, {"name": "Qatar", "file": "Qatar.mp3"}, {"name": "RC Africana", "file": "RC_Africana.mp3"}, {"name": "Reino Unido", "file": "Reino_Unido.mp3"}, {"name": "Rep Checa", "file": "Rep_Checa.mp3"}, {"name": "Republica Dominicana", "file": "Republica_Dominicana.mp3"}, {"name": "Ruanda", "file": "Ruanda.mp3"}, {"name": "Rumania", "file": "Rumania.mp3"}, {"name": "Rusia", "file": "Rusia.mp3"}, {"name": "Salvador", "file": "Salvador.mp3"}, {"name": "Serbia", "file": "Serbia.mp3"}, {"name": "Seychelles", "file": "Seychelles.mp3"}, {"name": "Sierra Leona", "file": "Sierra_Leona.mp3"}, {"name": "Singapur", "file": "Singapur.mp3"}, {"name": "SOM Malta", "file": "SOM_Malta.mp3"}, {"name": "Somalia", "file": "Somalia.mp3"}, {"name": "Sri Lanka", "file": "Sri_Lanka.mp3"}, {"name": "Sudan", "file": "Sudan.mp3"}, {"name": "Suecia", "file": "Suecia.mp3"}, {"name": "Suiza", "file": "Suiza.mp3"}, {"name": "Tanzania", "file": "Tanzania.mp3"}, {"name": "Timor Oriental", "file": "Timor_Oriental.mp3"}, {"name": "Trinidad Tobago", "file": "Trinidad_Tobago.mp3"}, {"name": "Tunez", "file": "Tunez.mp3"}, {"name": "Turquia", "file": "Turquia.mp3"}, {"name": "Ucrania", "file": "Ucrania.mp3"}, {"name": "UE", "file": "UE.mp3"}, {"name": "Uganda", "file": "Uganda.mp3"}, {"name": "Uruguay", "file": "Uruguay.mp3"}, {"name": "Vaticano", "file": "Vaticano.mp3"}, {"name": "Venezuela", "file": "Venezuela.mp3"}, {"name": "Yemen", "file": "Yemen.mp3"}, {"name": "Yibuti", "file": "Yibuti.mp3"}];
+  const URL_BASE_HIMNOS_GITHUB = 'https://raw.githubusercontent.com/tdolarea/anthemsnew/main/';
+
+  var cerSecuenciaHimnosP5 = [
+    { id: 'espana', nombre: 'España (Nacional)', url: URL_BASE_IZADO_BASE + '05_01_himno.mp3', local: false }
+  ];
+
+  var cerHimnosPaisesInicializados = false;
+
+  function inicializarSelectorPaisesHimnos() {
+    if (cerHimnosPaisesInicializados) return;
+    const sel = document.getElementById('selHimnoExtranjero');
+    if (!sel) return;
+    CATALOGO_HIMNOS_P5.forEach(p => {
+      if (p.file.toLowerCase().startsWith('espania')) return;
+      const opt = document.createElement('option');
+      opt.value = p.file;
+      opt.textContent = p.name;
+      sel.appendChild(opt);
+    });
+    cerHimnosPaisesInicializados = true;
+  }
+
+  async function obtenerAudioConCache(url) {
+    if (!url || !url.startsWith('http')) return url;
+    try {
+      if (typeof window !== 'undefined' && 'caches' in window) {
+        const cache = await caches.open('himnos-cache-v1');
+        const cachedResp = await cache.match(url);
+        if (cachedResp) {
+          const blob = await cachedResp.blob();
+          return URL.createObjectURL(blob);
+        }
+        const statusEl = document.getElementById('status');
+        if (statusEl) statusEl.textContent = 'Descargando himno...';
+        const netResp = await fetch(url);
+        if (netResp.ok) {
+          await cache.put(url, netResp.clone());
+          const blob = await netResp.blob();
+          return URL.createObjectURL(blob);
+        }
+      }
+    } catch (e) {
+      console.warn('Caché offline no disponible, fallback online:', e);
+    }
+    return url;
+  }
+
+  function agregarHimnoExtranjero() {
+    const sel = document.getElementById('selHimnoExtranjero');
+    if (!sel || !sel.value) return;
+    const file = sel.value;
+    const item = CATALOGO_HIMNOS_P5.find(p => p.file === file);
+    if (!item) return;
+
+    cerSecuenciaHimnosP5.push({
+      id: 'ext_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
+      nombre: item.name,
+      url: URL_BASE_HIMNOS_GITHUB + encodeURIComponent(file),
+      local: false
+    });
+
+    sel.value = '';
+    renderizarSecuenciaHimnosUI();
+  }
+
+  function eliminarHimnoDeSecuencia(idx) {
+    if (cerSecuenciaHimnosP5.length <= 1) {
+      alert('Debe haber al menos un himno en la secuencia.');
+      return;
+    }
+    cerSecuenciaHimnosP5.splice(idx, 1);
+    renderizarSecuenciaHimnosUI();
+  }
+
+  function moverHimnoSecuencia(idx, dir) {
+    const nuevoIdx = idx + dir;
+    if (nuevoIdx < 0 || nuevoIdx >= cerSecuenciaHimnosP5.length) return;
+    const temp = cerSecuenciaHimnosP5[idx];
+    cerSecuenciaHimnosP5[idx] = cerSecuenciaHimnosP5[nuevoIdx];
+    cerSecuenciaHimnosP5[nuevoIdx] = temp;
+    renderizarSecuenciaHimnosUI();
+  }
+
+  function renderizarSecuenciaHimnosUI() {
+    const cont = document.getElementById('listaHimnosActivos');
+    if (!cont) return;
+    cont.innerHTML = '';
+
+    cerSecuenciaHimnosP5.forEach((h, idx) => {
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex; justify-content:space-between; align-items:center; background:#0b152d; border:1px solid #1e3a8a; border-radius:6px; padding:6px 10px;';
+
+      const left = document.createElement('div');
+      left.style.cssText = 'display:flex; align-items:center; gap:8px;';
+      left.innerHTML = '<span style="font-size:11px; font-weight:800; color:#38bdf8;">' + (idx + 1) + '.</span>' +
+                       '<span style="font-size:12px; font-weight:700; color:#f8fafc;">' + h.nombre + '</span>';
+
+      const right = document.createElement('div');
+      right.style.cssText = 'display:flex; align-items:center; gap:8px;';
+
+      const btnStyleAzul = 'width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:6px; background:#0284c7; border:1.5px solid #38bdf8; cursor:pointer; padding:0; box-shadow:0 1px 3px rgba(0,0,0,0.3);';
+      const btnStyleRojo = 'width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; border-radius:6px; background:#450a0a; border:1.5px solid #ef4444; color:#fca5a5; font-size:18px; cursor:pointer; padding:0; box-shadow:0 1px 3px rgba(0,0,0,0.3);';
+
+      if (idx > 0) {
+        right.innerHTML += '<button type="button" onclick="moverHimnoSecuencia(' + idx + ', -1)" title="Subir himno" style="' + btnStyleAzul + '">' +
+                           '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>' +
+                           '</button>';
+      }
+      if (idx < cerSecuenciaHimnosP5.length - 1) {
+        right.innerHTML += '<button type="button" onclick="moverHimnoSecuencia(' + idx + ', 1)" title="Bajar himno" style="' + btnStyleAzul + '">' +
+                           '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:block;"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>' +
+                           '</button>';
+      }
+      if (cerSecuenciaHimnosP5.length > 1) {
+        right.innerHTML += '<button type="button" onclick="eliminarHimnoDeSecuencia(' + idx + ')" title="Eliminar himno" style="' + btnStyleRojo + '">🗑️</button>';
+      }
+
+      row.appendChild(left);
+      row.appendChild(right);
+      cont.appendChild(row);
+    });
+  }
+
+  function refrescarVisibilidadSeccionHimnos() {
+    const secH = document.getElementById('seccionHimnos');
+    if (!secH) return;
+    const esHimno = (typeof acompañamiento !== 'undefined') && (acompañamiento === 'himno' || acompañamiento === 'himno_chifle');
+    secH.style.display = esHimno ? 'block' : 'none';
+    if (esHimno) {
+      inicializarSelectorPaisesHimnos();
+      renderizarSecuenciaHimnosUI();
+    }
+  }
+
+  async function reproducirP5SecuenciaYChifle(callbackFinP5) {
+    const audioP = document.getElementById('audioPlayer');
+    const audioCh = document.getElementById('audioChifle');
+    const statusEl = document.getElementById('status');
+    const esHimnoConChifle = (typeof acompañamiento !== 'undefined' && acompañamiento === 'himno_chifle');
+
+    let idxHimno = 0;
+    const totalHimnos = cerSecuenciaHimnosP5.length;
+
+    async function tocarSiguienteHimno() {
+      if (idxHimno >= totalHimnos) {
+        if (audioP) audioP.ontimeupdate = null;
+        if (callbackFinP5) callbackFinP5();
+        return;
+      }
+
+      const himnoObj = cerSecuenciaHimnosP5[idxHimno];
+      const esPrimerHimno = (idxHimno === 0);
+      const esUltimoHimno = (idxHimno === totalHimnos - 1);
+      idxHimno++;
+
+      const urlEfectiva = await obtenerAudioConCache(himnoObj.url);
+
+      if (audioP) {
+        audioP.src = urlEfectiva;
+        if (statusEl) {
+          statusEl.textContent = 'Punto 5: Himno ' + himnoObj.nombre + ' (' + idxHimno + '/' + totalHimnos + ')';
+        }
+
+        if (esPrimerHimno && esHimnoConChifle && audioCh) {
+          audioCh.src = await obtenerAudioConCache(URL_BASE_IZADO_BASE + '05_03_01_CHIFLE_HIMNO_inicio.mp3');
+          audioCh.play().catch(e => console.warn('audioChifle inicio:', e));
+        }
+
+        if (esUltimoHimno && esHimnoConChifle && audioCh) {
+          let chifleFinalDisparado = false;
+          const urlChifleFinal = await obtenerAudioConCache(URL_BASE_IZADO_BASE + '05_03_02_CHIFLE_HIMNO_final.mp3');
+          audioP.ontimeupdate = function() {
+            if (!chifleFinalDisparado && audioP.duration && !isNaN(audioP.duration)) {
+              const tiempoRestante = audioP.duration - audioP.currentTime;
+              if (tiempoRestante <= 6.0) {
+                chifleFinalDisparado = true;
+                audioP.ontimeupdate = null;
+                audioCh.src = urlChifleFinal;
+                audioCh.play().catch(e => console.warn('audioChifle final:', e));
+              }
+            }
+          };
+        } else {
+          audioP.ontimeupdate = null;
+        }
+
+        audioP.onended = () => {
+          audioP.onended = null;
+          tocarSiguienteHimno();
+        };
+
+        audioP.play().catch(e => {
+          console.warn('Error audioP play:', e);
+          tocarSiguienteHimno();
+        });
+      }
+    }
+
+    tocarSiguienteHimno();
+  }
+
+  // Inicialización pasiva post-carga (no bloqueante)
+  window.addEventListener('load', function() {
+    setTimeout(refrescarVisibilidadSeccionHimnos, 200);
+  });
+
+</script>    <!-- MODAL EDITAR HORA IZADO -->    <div id="modalEditarHora" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center;">      <div style="background: #0f172a; border: 2px solid #0284c7; border-radius: 12px; padding: 24px; width: 90%; max-width: 300px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">        <div style="font-size: 14px; font-weight: 800; color: #38bdf8; margin-bottom: 16px;">📌 EDITAR HORA IZADO</div>        <div style="margin-bottom: 16px;">          <div style="font-size: 11px; color: #94a3b8; margin-bottom: 6px;">Hora:</div>          <input type="time" id="inputHoraModalIzado" style="width: 100%; padding: 12px; background: #1e293b; border: 1.5px solid #0284c7; border-radius: 6px; color: #38bdf8; font-weight: 800; font-size: 16px; font-family: 'Courier New', monospace;">        </div>        <div style="display: flex; gap: 8px;">          <button onclick="confirmarHoraIzado()" style="flex: 1; padding: 12px; background: #10b981; border: 1.5px solid #10b981; border-radius: 6px; color: white; font-weight: 800; cursor: pointer; font-size: 12px;">✅ Guardar</button>          <button onclick="cerrarModalHora()" style="flex: 1; padding: 12px; background: #ef4444; border: 1.5px solid #ef4444; border-radius: 6px; color: white; font-weight: 800; cursor: pointer; font-size: 12px;">❌ Cancelar</button>        </div>      </div>    </div>  </body></html>

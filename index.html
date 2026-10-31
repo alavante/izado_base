@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="es"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  <meta name="theme-color" content="#070d1e">  <meta name="apple-mobile-web-app-capable" content="yes">  <title>Izado y Arriado en Tierra</title>  <style>    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }    body { background: #070d1e; color: #f1f5f9; min-height: 100vh; display: flex; flex-direction: column; }    header { background: #0f172a; border-bottom: 2px solid #1e3a8a; padding: 12px 16px; display: flex; justify-content: center; }    .brand-title { font-size: 15px; font-weight: 800; color: #38bdf8; }    main { flex: 1; padding: 14px; max-width: 800px; margin: 0 auto; width: 100%; }    .card { background: #0f172a; border: 1px solid #1e3a8a; border-radius: 10px; padding: 14px; margin-bottom: 14px; }    .card-title { font-size: 13px; font-weight: 800; color: #38bdf8; text-transform: uppercase; margin-bottom: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 6px; }    .reloj-grande { background: #1a2332; border: 2px solid #0284c7; border-radius: 8px; padding: 12px; text-align: center; font-size: 16px; font-weight: 800; color: #38bdf8; font-family: 'Courier New', monospace; margin-bottom: 12px; }    .reloj-info { font-size: 12px; color: #38bdf8; text-align: center; font-weight: 700; }    .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }    .action-btn { background: #1e293b; border: 1.5px solid #334155; color: #f8fafc; padding: 12px 14px; border-radius: 8px; font-size: 12.5px; font-weight: 800; cursor: pointer; min-height: 48px; display: flex; align-items: center; justify-content: center; transition: 0.15s; }    .action-btn:active { background: #0284c7; border-color: #38bdf8; }    .action-btn.primary { background: #0c4a6e; border-color: #0284c7; color: #e0f2fe; }    .barra { padding: 6px 10px; background: #0b152d; border-radius: 8px; border-left: 3px solid #0284c7; display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; }    .barra-label { font-size: 10.5px; font-weight: 800; color: #cbd5e1; white-space: nowrap; }    .barra-botones { display: flex; gap: 4px; }    .barra-btn { background: #1e293b; border: 1.5px solid #334155; color: #f8fafc; padding: 6px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; min-height: auto; display: flex; align-items: center; justify-content: center; gap: 4px; transition: 0.15s; }    .barra-btn:active { background: #0284c7; border-color: #38bdf8; }    .dot { display: inline-block; width: 14px; height: 14px; background: #22c55e; border-radius: 50%; opacity: 0; transition: 0.2s; }    .input-group { display: flex; gap: 8px; margin-bottom: 12px; }    .input-group input { flex: 1; padding: 10px; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #cbd5e1; font-weight: 700; }    .input-group select { flex: 1; padding: 10px; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #cbd5e1; font-weight: 700; }    .input-group button { padding: 10px 16px; background: #0284c7; border: 1px solid #0284c7; border-radius: 6px; color: #fff; font-weight: 700; cursor: pointer; }    .status-bar { background: #7f1d1d; border: 2px solid #ef4444; border-radius: 8px; padding: 12px 16px; color: #fef2f2; font-size: 13px; font-weight: 800; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }    .status-stop { background: #dc2626; border: 1.5px solid #fecaca; color: white; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 900; cursor: pointer; }    .puntos-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }    .punto-btn { background: #1e293b; border: 1px solid #334155; color: #cbd5e1; padding: 16px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; min-height: 52px; display: flex; align-items: center; }    .punto-btn:active { background: #0284c7; }  </style></head>             <body onload="setTimeout(() => { setModo('izado'); setTimeout(() => { setModo('arriado'); setTimeout(() => { setModo('izado'); setAudioEjecucion('automatico'); }, 100); }, 100); }, 100);">    <header>    <div class="brand-title">Izado y Arriado en Tierra</div>  </header>  <main>          <!-- EVENTO -->    <div class="card">      <div class="card-title">⚙️ Evento</div>           <div class="btn-grid" style="margin-bottom: 10px;">  <button class="action-btn primary" id="btnIzado" onclick="setModo('izado')"><span class="dot" id="dotIzado"></span>📌 Izado</button>  <button class="action-btn primary" id="btnArriado" onclick="setModo('arriado')"><span class="dot" id="dotArriado"></span>📖 Arriado</button></div>       </div>          <!-- PROGRAMACIÓN HORARIA -->          <!-- PANEL DE PROGRAMACIÓN HORARIA -->
+<!DOCTYPE html><html lang="es"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">  <meta name="theme-color" content="#070d1e">  <meta name="apple-mobile-web-app-capable" content="yes">  <title>Izado y Arriado en Tierra</title>  <style>    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; -webkit-tap-highlight-color: transparent; }    body { background: #070d1e; color: #f1f5f9; min-height: 100vh; display: flex; flex-direction: column; }    header { background: #0f172a; border-bottom: 2px solid #1e3a8a; padding: 12px 16px; display: flex; justify-content: center; }    .brand-title { font-size: 15px; font-weight: 800; color: #38bdf8; }    main { flex: 1; padding: 14px; max-width: 800px; margin: 0 auto; width: 100%; }    .card { background: #0f172a; border: 1px solid #1e3a8a; border-radius: 10px; padding: 14px; margin-bottom: 14px; }    .card-title { font-size: 13px; font-weight: 800; color: #38bdf8; text-transform: uppercase; margin-bottom: 10px; border-bottom: 1px solid #1e293b; padding-bottom: 6px; }    .reloj-grande { background: #1a2332; border: 2px solid #0284c7; border-radius: 8px; padding: 12px; text-align: center; font-size: 16px; font-weight: 800; color: #38bdf8; font-family: 'Courier New', monospace; margin-bottom: 12px; }    .reloj-info { font-size: 12px; color: #38bdf8; text-align: center; font-weight: 700; }    .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }    .action-btn { background: #1e293b; border: 1.5px solid #334155; color: #f8fafc; padding: 12px 14px; border-radius: 8px; font-size: 12.5px; font-weight: 800; cursor: pointer; min-height: 48px; display: flex; align-items: center; justify-content: center; transition: 0.15s; }    .action-btn:active { background: #0284c7; border-color: #38bdf8; }    .action-btn.primary { background: #0c4a6e; border-color: #0284c7; color: #e0f2fe; }    .barra { padding: 6px 10px; background: #0b152d; border-radius: 8px; border-left: 3px solid #0284c7; display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 12px; }    .barra-label { font-size: 10.5px; font-weight: 800; color: #cbd5e1; white-space: nowrap; }    .barra-botones { display: grid; grid-template-columns: 86px 86px; gap: 6px; }    .barra-btn { background: #1e293b; border: 1.5px solid #334155; color: #f8fafc; padding: 6px 4px; border-radius: 6px; font-size: 11px; font-weight: 800; cursor: pointer; min-height: 32px; width: 86px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: 0.15s; box-sizing: border-box; white-space: nowrap; }    .barra-btn:active { background: #0284c7; border-color: #38bdf8; }    .dot { display: inline-block; width: 14px; height: 14px; background: #22c55e; border-radius: 50%; opacity: 0; transition: 0.2s; }    .input-group { display: flex; gap: 8px; margin-bottom: 12px; }    .input-group input { flex: 1; padding: 10px; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #cbd5e1; font-weight: 700; }    .input-group select { flex: 1; padding: 10px; background: #1e293b; border: 1px solid #334155; border-radius: 6px; color: #cbd5e1; font-weight: 700; }    .input-group button { padding: 10px 16px; background: #0284c7; border: 1px solid #0284c7; border-radius: 6px; color: #fff; font-weight: 700; cursor: pointer; }    .status-bar { background: #7f1d1d; border: 2px solid #ef4444; border-radius: 8px; padding: 12px 16px; color: #fef2f2; font-size: 13px; font-weight: 800; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }    .status-stop { background: #dc2626; border: 1.5px solid #fecaca; color: white; padding: 8px 16px; border-radius: 6px; font-size: 13px; font-weight: 900; cursor: pointer; }    .puntos-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }    .punto-btn { background: #1e293b; border: 1px solid #334155; color: #cbd5e1; padding: 16px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; min-height: 52px; display: flex; align-items: center; }    .punto-btn:active { background: #0284c7; }  </style></head>             <body onload="setTimeout(() => { setModo('izado'); setTimeout(() => { setModo('arriado'); setTimeout(() => { setModo('izado'); setAudioEjecucion('automatico'); }, 100); }, 100); }, 100);">    <header>    <div class="brand-title">Izado y Arriado en Tierra</div>  </header>  <main>          <!-- EVENTO -->    <div class="card">      <div class="card-title">⚙️ Evento</div>           <div class="btn-grid" style="margin-bottom: 10px;">  <button class="action-btn primary" id="btnIzado" onclick="setModo('izado')"><span class="dot" id="dotIzado"></span>📌 Izado</button>  <button class="action-btn primary" id="btnArriado" onclick="setModo('arriado')"><span class="dot" id="dotArriado"></span>📖 Arriado</button></div>       </div>          <!-- PROGRAMACIÓN HORARIA -->          <!-- PANEL DE PROGRAMACIÓN HORARIA -->
     <div style="background:#070d1e; border:1px solid #1e3a8a; border-radius:8px; padding:12px; margin-bottom:14px;">          <div style="font-size:12px; font-weight:800; color:#38bdf8; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center;">            <span>⏰ PROGRAMACIÓN HORARIA</span>            <span style="font-size:11px; color:#94a3b8;" id="lblInfoOcaso"></span>          </div>          <!-- VENTANA SIMPLIFICADA DE HUSO HORARIO -->            <div style="background:#070d1e; border:1px solid #1e3a8a; border-radius:6px; padding:8px 10px;">              <div style="display:flex; justify-content:space-between; align-items:center;">                <div style="display:flex; align-items:center; gap:6px;">                  <span style="font-size:11.5px; font-weight:800; color:#94a3b8;">🌐 HUSO HORARIO:</span>                  <span style="font-size:12px; font-weight:900; color:#38bdf8;" id="lblHusoTextoVisible">UTC+2 (B)</span>                </div>                <button type="button" class="action-btn" id="btnToggleHuso" onclick="toggleSelectorHusoIAB()" style="padding:3px 8px; font-size:11px; min-height:26px;">                  ⚙️ Cambiar                </button>              </div>              <!-- DESPLEGABLE OCULTO (SOLO SI SE OPRIME CAMBIAR) -->              <div id="boxDesplegableHuso" style="display:none; margin-top:8px; padding-top:8px; border-top:1px dashed #1e3a8a;">                <select id="selHusoHorario" style="width:100%; background:#0b152d; border:1.5px solid #38bdf8; border-radius:6px; color:#fff; font-size:12px; font-weight:800; padding:6px 8px;" onchange="onSeleccionarHusoIAB(this.value)">
                   <option value="auto" selected>📱 Hora del Dispositivo (Auto)</option>
                   <optgroup label="── HUSO CERO ──">
@@ -32,7 +32,91 @@
                     <option value="-11">UTC -11 · X-ray (X)</option>
                     <option value="-12">UTC -12 · Yankee (Y)</option>
                   </optgroup>
-                </select>              </div>            </div>          <!-- MODO IZADO: HORA FIJA (08:00 POR DEFECTO O MANUAL) -->          <div id="boxHoraIzado" style="display:flex; align-items:center; justify-content:space-between; gap:10px;">            <div>              <div style="font-size:13px; font-weight:700; color:#f8fafc;">Hora de Izado:</div>              <div style="font-size:11px; color:#94a3b8;">Por defecto a las 08:00h (ajustable)</div>            </div>            <input type="time" id="inputHoraIzado" value="08:00"               style="background:#0b152d; border:1.5px solid #38bdf8; border-radius:6px; color:#fff; font-size:16px; font-weight:800; padding:6px 10px; text-align:center;"              oninput="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();" onchange="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();">          </div>          <!-- MODO ARRIADO: MANUAL / LOCALIDAD / GPS -->          <div id="boxHoraArriado" style="display:none; flex-direction:column; gap:10px;">                        <div style="font-size:11.5px; font-weight:800; color:#cbd5e1; margin-top:2px;">POSICIÓN PARA EL CÁLCULO DEL OCASO:</div>                        <!-- SELECTOR DE FUENTE DE POSICIÓN: 4 BOTONES -->            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">              <button type="button" class="action-btn primary" id="btnFuenteBase" onclick="setFuenteOcasoIAB('base')" style="font-size:11px; padding:8px 4px; justify-content:center;">                ⚓ Localidad / Base              </button>              <button type="button" class="action-btn" id="btnFuenteGps" onclick="setFuenteOcasoIAB('gps')" style="font-size:11px; padding:8px 4px; justify-content:center;">                📡 Posición GPS              </button>              <button type="button" class="action-btn" id="btnFuenteCoordManual" onclick="setFuenteOcasoIAB('coord')" style="font-size:11px; padding:8px 4px; justify-content:center;">                ✏️ Coord. Manuales              </button>              <button type="button" class="action-btn" id="btnFuenteManual" onclick="setFuenteOcasoIAB('manual')" style="font-size:11px; padding:8px 4px; justify-content:center;">                📝 Hora Manual              </button>            </div>            <!-- OP 1: POR BASE NAVAL / LOCALIDAD -->            <div id="subBoxBase" style="display:flex; flex-direction:column; gap:6px; background:#0b152d; padding:10px; border-radius:6px; border:1px solid #1e3a8a;">              <div style="font-size:11.5px; color:#cbd5e1; font-weight:700;">Seleccionar Base Naval / Localidad:</div>              <select id="selBaseNaval" style="width:100%; background:#070d1e; border:1.5px solid #38bdf8; border-radius:6px; color:#fff; font-size:12.5px; font-weight:700; padding:8px;" onchange="calcularOcasoBaseIAB()">                <option value="Rota">Base Naval de Rota</option>                <option value="Ferrol">Arsenal de Ferrol</option>                <option value="Cartagena">Arsenal de Cartagena</option>                <option value="San Fernando">Base Naval de La Carraca / San Fernando</option>                <option value="Las Palmas">Arsenal de Las Palmas</option>                <option value="Marin">ENM de Marín</option>                <option value="Mahon">Estación Naval de Mahón</option>                <option value="Ceuta">CN de Ceuta</option>                <option value="Melilla">CN de Melilla</option>                <option value="Malaga">Puerto de Málaga</option>                <option value="Alicante">Puerto de Alicante</option>                <option value="Valencia">CN de Valencia</option>                <option value="Barcelona">CN de Barcelona</option>                <option value="Palma">CN de Palma de Mallorca</option>              </select>            </div>            <!-- OP 2: POR GPS EN LA MAR -->            <div id="subBoxGps" style="display:none; flex-direction:column; gap:6px; background:#0b152d; padding:10px; border-radius:6px; border:1px solid #1e3a8a;">              <div style="font-size:11.5px; color:#cbd5e1; font-weight:700;">Lectura GPS Satelital del Buque:</div>              <button type="button" class="action-btn primary" onclick="obtenerGpsYCalcularOcasoIAB()" style="justify-content:center; font-size:12px; padding:10px; font-weight:800;">                <span>📡 Leer Coordenadas GPS y Calcular Ocaso</span>              </button>              <div style="font-size:11px; color:#94a3b8; text-align:center;" id="lblCoordenadasGps">Coordenadas no leídas aún</div>            </div>            <!-- OP 3: COORDENADAS MANUALES (LATITUD Y LONGITUD) -->            <div id="subBoxCoord" style="display:none; flex-direction:column; gap:8px; background:#0b152d; padding:10px; border-radius:6px; border:1px solid #1e3a8a;">              <div style="font-size:11.5px; color:#cbd5e1; font-weight:700;">Introducir Coordenadas Manuales:</div>              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px;">                <div>                  <div style="font-size:10.5px; color:#94a3b8; margin-bottom:2px;">Latitud (° N / -S):</div>                  <input type="number" step="0.0001" id="inputCoordLat" value="36.6200" placeholder="Ej: 36.6200"                    style="width:100%; background:#070d1e; border:1.5px solid #38bdf8; border-radius:6px; color:#fff; font-size:14px; font-weight:800; padding:6px 8px; text-align:center;"                    oninput="calcularOcasoCoordManualIAB()">                </div>                <div>                  <div style="font-size:10.5px; color:#94a3b8; margin-bottom:2px;">Longitud (° E / -W):</div>                  <input type="number" step="0.0001" id="inputCoordLon" value="-6.3500" placeholder="Ej: -6.3500"                    style="width:100%; background:#070d1e; border:1.5px solid #38bdf8; border-radius:6px; color:#fff; font-size:14px; font-weight:800; padding:6px 8px; text-align:center;"                    oninput="calcularOcasoCoordManualIAB()">                </div>              </div>              <div style="font-size:10px; color:#64748b; font-style:italic;">Formato decimal (ej. Rota: Lat 36.6200, Lon -6.3500).</div>            </div>            <!-- OP 4: ENTRADA DIRECTA POR ORDEN DIARIA -->            <div id="subBoxManual" style="display:none; flex-direction:column; gap:6px; background:#0b152d; padding:10px; border-radius:6px; border:1px solid #1e3a8a;">              <div style="display:flex; align-items:center; justify-content:space-between;">                <div>                  <div style="font-size:11.5px; color:#cbd5e1; font-weight:700;">Hora fijada manualmente:</div>                  <div style="font-size:10px; color:#94a3b8;">Entrada horaria fija sin cálculo solar</div>                </div>                <input type="time" id="inputHoraArriadoManual" value="19:30"                   style="background:#070d1e; border:1.5px solid #38bdf8; border-radius:6px; color:#fff; font-size:16px; font-weight:900; padding:6px 10px; text-align:center;"                  oninput="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();" onchange="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();">              </div>            </div>          </div>          <!-- TARJETA DESTACADA EN PANTALLA: POSICIÓN Y HORA DEL ARRIADO -->          <div style="margin-top:12px; background:#0b152d; border:1.5px solid #1e3a8a; border-radius:8px; padding:12px;">            <!-- LÍNEA 1: POSICIÓN EN PANTALLA (SOLICITUD EXPLÍCITA) -->            <div id="rowPosicionPantalla" style="display:flex; justify-content:space-between; align-items:center; padding-bottom:8px; margin-bottom:8px; border-bottom:1px solid #1e293b; flex-wrap:wrap; gap:4px;">              <span style="font-size:11px; font-weight:800; color:#94a3b8; display:flex; align-items:center; gap:4px;">                📍 POSICIÓN EN PANTALLA:              </span>              <span style="font-size:12px; font-weight:900; color:#38bdf8; text-align:right;" id="lblPosicionDisplay">                36°37.2'N, 006°21.0'W · Base Naval de Rota              </span>            </div>            <!-- LÍNEA 2: HORA DEL ARRIADO / OCASO Y CUENTA ATRÁS -->            <div style="display:flex; justify-content:space-between; align-items:center;">              <div>                <div style="font-size:10.5px; font-weight:800; color:#94a3b8; text-transform:uppercase;" id="lblTituloHoraEfectiva">🎯 HORA DEL ARRIADO:</div>                <div style="font-size:22px; font-weight:900; color:#fbbf24; font-variant-numeric:tabular-nums;" id="lblHoraCeremonialDisplay">19:30h</div>              </div>              <div style="text-align:right;">                <div style="font-size:10.5px; font-weight:800; color:#94a3b8; text-transform:uppercase;">⏱️ HORA LOCAL SISTEMA:</div>                <div style="font-size:22px; font-weight:900; color:#38bdf8; font-variant-numeric:tabular-nums;" id="lblCuentaAtras">--:--:--</div>              </div>            </div>          </div>        </div>
+                </select>              </div>            </div>          <!-- MODO IZADO: HORA FIJA (08:00 POR DEFECTO O MANUAL) -->          <div id="boxHoraIzado" style="display:flex; align-items:center; justify-content:space-between; gap:10px;">            <div>              <div style="font-size:13px; font-weight:700; color:#f8fafc;">Hora de Izado:</div>                          </div>            <input type="time" id="inputHoraIzado" value="08:00"               style="background:#0b152d; border:1.5px solid #38bdf8; border-radius:6px; color:#fff; font-size:16px; font-weight:800; padding:6px 10px; text-align:center;"              oninput="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();" onchange="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();">          </div>          <!-- MODO ARRIADO: MANUAL / LOCALIDAD / GPS -->          <div id="boxHoraArriado" style="display:none; flex-direction:column; gap:10px;">                        <div style="font-size:11.5px; font-weight:800; color:#cbd5e1; margin-top:2px;">POSICIÓN PARA EL CÁLCULO DEL OCASO:</div>                        <!-- SELECTOR DE FUENTE DE POSICIÓN: 4 BOTONES -->            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px;">              <button type="button" class="action-btn primary" id="btnFuenteBase" onclick="setFuenteOcasoIAB('base')" style="font-size:11px; padding:8px 4px; justify-content:center;">                ⚓ Localidad / Base              </button>              <button type="button" class="action-btn" id="btnFuenteGps" onclick="setFuenteOcasoIAB('gps')" style="font-size:11px; padding:8px 4px; justify-content:center;">                📡 Posición GPS              </button>              <button type="button" class="action-btn" id="btnFuenteCoordManual" onclick="setFuenteOcasoIAB('coord')" style="font-size:11px; padding:8px 4px; justify-content:center;">                ✏️ Coord. Manuales              </button>              <button type="button" class="action-btn" id="btnFuenteManual" onclick="setFuenteOcasoIAB('manual')" style="font-size:11px; padding:8px 4px; justify-content:center;">                📝 Hora Manual              </button>            </div>            <!-- OP 1: POR BASE NAVAL / LOCALIDAD -->            <div id="subBoxBase" style="display:flex; flex-direction:column; gap:6px; background:#0b152d; padding:10px; border-radius:6px; border:1px solid #1e3a8a;">              <div style="font-size:11.5px; color:#cbd5e1; font-weight:700;">Seleccionar Base Naval / Localidad:</div>              <select id="selBaseNaval" style="width:100%; background:#070d1e; border:1.5px solid #38bdf8; border-radius:6px; color:#fff; font-size:12.5px; font-weight:700; padding:8px;" onchange="calcularOcasoBaseIAB()">                <option value="Rota">Base Naval de Rota</option>                <option value="Ferrol">Arsenal de Ferrol</option>                <option value="Cartagena">Arsenal de Cartagena</option>                <option value="San Fernando">Base Naval de La Carraca / San Fernando</option>                <option value="Las Palmas">Arsenal de Las Palmas</option>                <option value="Marin">ENM de Marín</option>                <option value="Mahon">Estación Naval de Mahón</option>                <option value="Ceuta">CN de Ceuta</option>                <option value="Melilla">CN de Melilla</option>                <option value="Malaga">Puerto de Málaga</option>                <option value="Alicante">Puerto de Alicante</option>                <option value="Valencia">CN de Valencia</option>                <option value="Barcelona">CN de Barcelona</option>                <option value="Palma">CN de Palma de Mallorca</option>              </select>            </div>            <!-- OP 2: POR GPS EN LA MAR -->
+            <div id="subBoxGps" style="display:none; flex-direction:column; gap:8px; background:#0b152d; padding:10px; border-radius:6px; border:1px solid #1e3a8a;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <div style="font-size:11.5px; color:#cbd5e1; font-weight:700;">Lectura posición GPS:</div>
+                <button type="button" onclick="conectarGpsUsbSerialNMEA()" id="btnGpsSerial" style="background:#0c4a6e; border:1.5px solid #0284c7; color:#38bdf8; padding:3px 8px; border-radius:5px; font-size:10.5px; font-weight:800; cursor:pointer;">
+                  🔌 Conectar GPS USB / Serie
+                </button>
+              </div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                <!-- LATITUD GPS DISPLAY -->
+                <div style="background:#070d1e; padding:6px 8px; border-radius:6px; border:1px solid #1e293b;">
+                  <div style="font-size:10.5px; color:#94a3b8; font-weight:800; margin-bottom:4px;">LATITUD:</div>
+                  <div style="display:flex; align-items:center; gap:4px;">
+                    <div id="dispGpsLatGrad" style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;">00</div>
+                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">°</span>
+                    <div id="dispGpsLatMin" style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;">00</div>
+                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">'</span>
+                    <div id="dispGpsLatHem" style="background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#38bdf8; font-size:13px; font-weight:900; padding:5px 6px;">N</div>
+                  </div>
+                </div>
+
+                <!-- LONGITUD GPS DISPLAY -->
+                <div style="background:#070d1e; padding:6px 8px; border-radius:6px; border:1px solid #1e293b;">
+                  <div style="font-size:10.5px; color:#94a3b8; font-weight:800; margin-bottom:4px;">LONGITUD:</div>
+                  <div style="display:flex; align-items:center; gap:4px;">
+                    <div id="dispGpsLonGrad" style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;">000</div>
+                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">°</span>
+                    <div id="dispGpsLonMin" style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;">00</div>
+                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">'</span>
+                    <div id="dispGpsLonHem" style="background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#38bdf8; font-size:13px; font-weight:900; padding:5px 6px;">W</div>
+                  </div>
+                </div>
+              </div>
+              <div style="font-size:11px; color:#94a3b8; text-align:center;" id="lblCoordenadasGps">Coordenadas no leídas aún</div>
+            </div>            <!-- OP 3: COORDENADAS MANUALES (LATITUD Y LONGITUD) -->            <div id="subBoxCoord" style="display:none; flex-direction:column; gap:8px; background:#0b152d; padding:10px; border-radius:6px; border:1px solid #1e3a8a;">
+              <div style="font-size:11.5px; color:#cbd5e1; font-weight:700;">Introducir Coordenadas Manuales (Grados y Minutos):</div>
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                <!-- LATITUD MILITAR -->
+                <div style="background:#070d1e; padding:6px 8px; border-radius:6px; border:1px solid #1e293b;">
+                  <div style="font-size:10.5px; color:#94a3b8; font-weight:800; margin-bottom:4px;">LATITUD:</div>
+                  <div style="display:flex; align-items:center; gap:4px;">
+                    <input type="number" id="inputCoordLatGrad" value="36" min="0" max="90" placeholder="36"
+                      style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;"
+                      oninput="calcularOcasoCoordManualIAB()">
+                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">°</span>
+                    <input type="number" step="0.1" id="inputCoordLatMin" value="37.2" min="0" max="59.99" placeholder="37.2"
+                      style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;"
+                      oninput="calcularOcasoCoordManualIAB()">
+                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">'</span>
+                    <select id="selCoordLatHem" style="background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#38bdf8; font-size:13px; font-weight:900; padding:5px 4px;"
+                      onchange="calcularOcasoCoordManualIAB()">
+                      <option value="N" selected>N</option>
+                      <option value="S">S</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- LONGITUD MILITAR -->
+                <div style="background:#070d1e; padding:6px 8px; border-radius:6px; border:1px solid #1e293b;">
+                  <div style="font-size:10.5px; color:#94a3b8; font-weight:800; margin-bottom:4px;">LONGITUD:</div>
+                  <div style="display:flex; align-items:center; gap:4px;">
+                    <input type="number" id="inputCoordLonGrad" value="6" min="0" max="180" placeholder="006"
+                      style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;"
+                      oninput="calcularOcasoCoordManualIAB()">
+                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">°</span>
+                    <input type="number" step="0.1" id="inputCoordLonMin" value="21.0" min="0" max="59.99" placeholder="21.0"
+                      style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;"
+                      oninput="calcularOcasoCoordManualIAB()">
+                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">'</span>
+                    <select id="selCoordLonHem" style="background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#38bdf8; font-size:13px; font-weight:900; padding:5px 4px;"
+                      onchange="calcularOcasoCoordManualIAB()">
+                      <option value="W" selected>W</option>
+                      <option value="E">E</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div style="font-size:10px; color:#64748b; font-style:italic;">Formato militar náutico: Grados y Minutos con decimales (ej. Rota: 36°37.2'N · 006°21.0'W).</div>
+            </div>            <!-- OP 4: ENTRADA DIRECTA POR ORDEN DIARIA -->            <div id="subBoxManual" style="display:none; flex-direction:column; gap:6px; background:#0b152d; padding:10px; border-radius:6px; border:1px solid #1e3a8a;">              <div style="display:flex; align-items:center; justify-content:space-between;">                <div>                  <div style="font-size:11.5px; color:#cbd5e1; font-weight:700;">Hora fijada manualmente:</div>                  <div style="font-size:10px; color:#94a3b8;">Entrada horaria fija sin cálculo solar</div>                </div>                <input type="time" id="inputHoraArriadoManual" value="19:30"                   style="background:#070d1e; border:1.5px solid #38bdf8; border-radius:6px; color:#fff; font-size:16px; font-weight:900; padding:6px 10px; text-align:center;"                  oninput="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();" onchange="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();">              </div>            </div>          </div>          <!-- TARJETA DESTACADA EN PANTALLA: POSICIÓN Y HORA DEL ARRIADO -->          <div style="margin-top:12px; background:#0b152d; border:1.5px solid #1e3a8a; border-radius:8px; padding:12px;">            <!-- LÍNEA 1: POSICIÓN EN PANTALLA (SOLICITUD EXPLÍCITA) -->            <div id="rowPosicionPantalla" style="display:flex; justify-content:space-between; align-items:center; padding-bottom:8px; margin-bottom:8px; border-bottom:1px solid #1e293b; flex-wrap:wrap; gap:4px;">              <span style="font-size:11px; font-weight:800; color:#94a3b8; display:flex; align-items:center; gap:4px;">                📍 POSICIÓN EN PANTALLA:              </span>              <span style="font-size:12px; font-weight:900; color:#38bdf8; text-align:right;" id="lblPosicionDisplay">                36°37.2'N, 006°21.0'W · Base Naval de Rota              </span>            </div>            <!-- LÍNEA 2: HORA DEL ARRIADO / OCASO Y CUENTA ATRÁS -->            <div style="display:flex; justify-content:space-between; align-items:center;">              <div>                <div style="font-size:10.5px; font-weight:800; color:#94a3b8; text-transform:uppercase;" id="lblTituloHoraEfectiva">🎯 HORA DEL ARRIADO:</div>                <div style="font-size:22px; font-weight:900; color:#fbbf24; font-variant-numeric:tabular-nums;" id="lblHoraCeremonialDisplay">19:30h</div>              </div>              <div style="text-align:right;">                <div style="text-align:right;">
+                <div style="font-size:10.5px; font-weight:800; color:#94a3b8; text-transform:uppercase;">⏱️ HORA SISTEMA:</div>
+                <div style="display:flex; align-items:baseline; justify-content:flex-end; gap:6px;">
+                  <span style="font-size:22px; font-weight:900; color:#38bdf8; font-variant-numeric:tabular-nums;" id="lblCuentaAtras">--:--:--</span>
+                  <span style="font-size:22px; font-weight:900; color:#38bdf8;" id="lblHusoNatoBox">A</span>
+                </div>
+              </div>            </div>          </div>        </div>
 
     <div class="card">      <div class="card-title">🎵 Opciones</div>             <div class="barra">  <div class="barra-label">💂 Guardia Militar:</div>  <div class="barra-botones">    <button class="barra-btn" onclick="setGuardia(true)"><span class="dot" id="dotGuardiaSi"></span>Sí</button>    <button class="barra-btn" onclick="setGuardia(false)"><span class="dot" id="dotGuardiaNo"></span>No</button>  </div></div>                        <div class="barra" id="seccionPresenten" style="display: none;">        <div class="barra-label">🎙️ Orden Presenten:</div>        <div class="barra-botones">          <button class="barra-btn" onclick="setPresenten('voz')"><span class="dot" id="dotPresentenVoz"></span>Voz</button>          <button class="barra-btn" onclick="setPresenten('corneta')"><span class="dot" id="dotPresentenCorneta"></span>Corneta</button>        </div>      </div>      <div style="padding: 10px; background: #0b152d; border-radius: 8px; border-left: 3px solid #10b981; margin-bottom: 12px;">        <div style="font-size: 11px; font-weight: 800; color: #38bdf8; margin-bottom: 8px;">🎵 Audio:</div>        <div class="btn-grid">          <button class="action-btn" onclick="setAcompañamiento('himno')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompHimno"></span>Himno</button>          <button class="action-btn" onclick="setAcompañamiento('corneta')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompCorneta"></span>Corneta</button>          <button class="action-btn" onclick="setAcompañamiento('chifle')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompChifle"></span>Chifle</button>          <button class="action-btn" onclick="setAcompañamiento('himno_chifle')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompHimnoChifle"></span>Himno+Chifle</button>        </div>      </div>      <div id="seccionOracion" style="display: none; padding: 10px; background: #0b152d; border-radius: 8px; border-left: 3px solid #f59e0b;">        <div style="font-size: 11px; font-weight: 800; color: #fcd34d; margin-bottom: 8px;">✝️ Oración:</div>        <div class="btn-grid">          <button class="action-btn" onclick="setOracion('corneta')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionCorneta"></span>Corneta</button>          <button class="action-btn" onclick="setOracion('Cantada')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionCantada"></span>Cantada</button>          <button class="action-btn" onclick="setOracion('leida')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionLeida"></span>Leída</button>          <button class="action-btn" onclick="setOracion('ninguna')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotOracionNinguna"></span>Ninguna</button>        </div>      </div>   </div>        <div style="padding: 10px; background: #0b152d; border-radius: 8px; border-left: 3px solid #8b5cf6; margin-bottom: 12px;">  <div style="font-size: 11px; font-weight: 800; color: #c4b5fd; margin-bottom: 8px;">EJECUCION:</div>     <div class="btn-grid">    <button class="action-btn" onclick="setAudioEjecucion('automatico')" style="padding: 8px 12px; font-size: 11px;">      <span class="dot" id="dotAudioAuto"></span>Modo Automático    </button>    <button class="action-btn" onclick="setAudioEjecucion('manual')" style="padding: 8px 12px; font-size: 11px;">      <span class="dot" id="dotAudioManual"></span>Modo Manual    </button>  </div></div>          <!-- RELOJ (standalone, fuera de PROGRAMACIÓN) -->    <div class="card" style="display: none;">      <div class="reloj-grande" id="relojStandalone">--:--:--</div>      <div class="reloj-info"><span id="husoInfoStandalone">UTC</span> | <span id="fechaInfoStandalone">--/--/----</span></div>    </div>         <!-- MODO MANUAL -->    <div class="card">      <div class="card-title">⏸️ Modo Manual</div>      <div class="status-bar">        <span id="status">Esperando inicio...</span>        <button class="status-stop" onclick="stopAll()">⏹️ STOP</button>      </div>      <div class="puntos-grid" id="puntosGrid"></div>    </div>    <!-- SECUENCIA CONTINUA -->    <div class="card">      <button class="action-btn primary" style="width: 100%; padding: 16px; background: #0284c7; border-color: #38bdf8;" onclick="iniciarAuto()">▶️ SECUENCIA CONTINUA (P2-P8)</button>    </div>  </main>  <audio id="audioPlayer"></audio>     <script>
 
@@ -55,7 +139,7 @@
       if (el) return el;
       if (id === 'horaIzado') return origGetById('inputHoraIzado') || createSafeElement();
       if (id === 'reloj') return origGetById('lblCuentaAtras') || createSafeElement();
-      if (id === 'husoInfo') return origGetById('lblHusoTextoVisible') || createSafeElement();
+      if (id === 'husoInfo') return createSafeElement();
       return createSafeElement();
     };
   })();
@@ -170,6 +254,7 @@ function setFuenteOcasoIAB(fuente) {
   if (boxM) boxM.style.display = (fuente === 'manual' ? 'flex' : 'none');
 
   if (fuente === 'base') calcularOcasoBaseIAB();
+  if (fuente === 'gps') obtenerGpsYCalcularOcasoIAB();
   else if (fuente === 'coord') calcularOcasoCoordManualIAB();
   else if (fuente === 'manual') actualizarHoraObjetivoIAB();
 }
@@ -244,11 +329,24 @@ function calcularOcasoBaseIAB() {
 }
 
 function calcularOcasoCoordManualIAB() {
-  const inLat = document.getElementById('inputCoordLat');
-  const inLon = document.getElementById('inputCoordLon');
-  if (inLat && inLon) {
-    cerPosicionLat = parseFloat(inLat.value) || 36.6200;
-    cerPosicionLon = parseFloat(inLon.value) || -6.3500;
+  const inLatGrad = document.getElementById('inputCoordLatGrad');
+  const inLatMin = document.getElementById('inputCoordLatMin');
+  const selLatHem = document.getElementById('selCoordLatHem');
+  const inLonGrad = document.getElementById('inputCoordLonGrad');
+  const inLonMin = document.getElementById('inputCoordLonMin');
+  const selLonHem = document.getElementById('selCoordLonHem');
+
+  if (inLatGrad && inLatMin && selLatHem && inLonGrad && inLonMin && selLonHem) {
+    const latG = Math.abs(parseFloat(inLatGrad.value)) || 0;
+    const latM = Math.abs(parseFloat(inLatMin.value)) || 0;
+    const latSign = (selLatHem.value === 'S') ? -1 : 1;
+    cerPosicionLat = latSign * (latG + (latM / 60));
+
+    const lonG = Math.abs(parseFloat(inLonGrad.value)) || 0;
+    const lonM = Math.abs(parseFloat(inLonMin.value)) || 0;
+    const lonSign = (selLonHem.value === 'W') ? -1 : 1;
+    cerPosicionLon = lonSign * (lonG + (lonM / 60));
+
     cerPosicionNombre = 'Coordenadas Manuales';
     const ocasoStr = calcularHoraOcasoIAB(cerPosicionLat, cerPosicionLon);
     if (cerModoIAB === 'arriado') cerHoraObjetivoIAB = ocasoStr;
@@ -257,28 +355,333 @@ function calcularOcasoCoordManualIAB() {
   }
 }
 
+function reiniciarCajasGpsVisualIAB() {
+  const dLatG = document.getElementById('dispGpsLatGrad');
+  const dLatM = document.getElementById('dispGpsLatMin');
+  const dLatH = document.getElementById('dispGpsLatHem');
+  const dLonG = document.getElementById('dispGpsLonGrad');
+  const dLonM = document.getElementById('dispGpsLonMin');
+  const dLonH = document.getElementById('dispGpsLonHem');
+  if (dLatG) dLatG.textContent = '00';
+  if (dLatM) dLatM.textContent = '00';
+  if (dLatH) dLatH.textContent = 'N';
+  if (dLonG) dLonG.textContent = '000';
+  if (dLonM) dLonM.textContent = '00';
+  if (dLonH) dLonH.textContent = 'W';
+}
+
+function aplicarCoordenadasGpsRealesIAB(lat, lon, fuenteNombre) {
+  const lblCoord = document.getElementById('lblCoordenadasGps');
+  const dLatG = document.getElementById('dispGpsLatGrad');
+  const dLatM = document.getElementById('dispGpsLatMin');
+  const dLatH = document.getElementById('dispGpsLatHem');
+  const dLonG = document.getElementById('dispGpsLonGrad');
+  const dLonM = document.getElementById('dispGpsLonMin');
+  const dLonH = document.getElementById('dispGpsLonHem');
+
+  cerPosicionLat = lat;
+  cerPosicionLon = lon;
+  cerPosicionNombre = fuenteNombre || 'GPS Satelital';
+
+  const latAbs = Math.abs(lat);
+  const lonAbs = Math.abs(lon);
+  const latG = Math.floor(latAbs);
+  const latM = ((latAbs - latG) * 60).toFixed(1);
+  const latH = lat >= 0 ? 'N' : 'S';
+
+  const lonG = Math.floor(lonAbs);
+  const lonM = ((lonAbs - lonG) * 60).toFixed(1);
+  const lonH = lon >= 0 ? 'E' : 'W';
+
+  if (dLatG) dLatG.textContent = String(latG);
+  if (dLatM) dLatM.textContent = String(latM).replace('.', ',');
+  if (dLatH) dLatH.textContent = latH;
+
+  if (dLonG) dLonG.textContent = String(lonG);
+  if (dLonM) dLonM.textContent = String(lonM).replace('.', ',');
+  if (dLonH) dLonH.textContent = lonH;
+
+  if (lblCoord) lblCoord.textContent = '✅ ' + cerPosicionNombre + ' fijado';
+  const ocasoStr = calcularHoraOcasoIAB(lat, lon);
+  if (cerModoIAB === 'arriado') cerHoraObjetivoIAB = ocasoStr;
+  refrescarPosicionYHoraEnPantallaIAB();
+  actualizarTickRelojIAB();
+}
+
 function obtenerGpsYCalcularOcasoIAB() {
   const lblCoord = document.getElementById('lblCoordenadasGps');
-  if (lblCoord) lblCoord.textContent = '⏳ Conectando con satélites GPS...';
+  if (lblCoord) lblCoord.textContent = '⏳ Comprobando antena GPS satelital...';
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((pos) => {
-      const lat = pos.coords.latitude;
-      const lon = pos.coords.longitude;
-      cerPosicionLat = lat;
-      cerPosicionLon = lon;
-      cerPosicionNombre = 'Posición GPS';
-      if (lblCoord) lblCoord.textContent = `✅ GPS OK: ${formatearCoordNavalIAB(lat, lon)}`;
-      const ocasoStr = calcularHoraOcasoIAB(lat, lon);
-      if (cerModoIAB === 'arriado') cerHoraObjetivoIAB = ocasoStr;
-      refrescarPosicionYHoraEnPantallaIAB();
-      actualizarTickRelojIAB();
+      const acc = pos.coords.accuracy || 9999;
+      // FILTRO ANTI-IP: Si la precisión supera los 100m, procede de triangulación IP/Wi-Fi de red y se descarta
+      if (acc > 100) {
+        reiniciarCajasGpsVisualIAB();
+        if (lblCoord) {
+          lblCoord.innerHTML = '<span style="color:#f87171; font-weight:800;">⚠️ Posición por IP/Red descartada (±' + Math.round(acc) + 'm). Conecte GPS USB o use Coord. Manuales.</span>';
+        }
+        return;
+      }
+
+      aplicarCoordenadasGpsRealesIAB(pos.coords.latitude, pos.coords.longitude, 'GPS Satelital (±' + Math.round(acc) + 'm)');
     }, (err) => {
-      if (lblCoord) lblCoord.textContent = '❌ Error GPS: Usando posición de seguridad';
-    }, { timeout: 10000, enableHighAccuracy: true });
+      reiniciarCajasGpsVisualIAB();
+      if (lblCoord) lblCoord.textContent = 'Sin señal de GPS interno. Conecte GPS USB / Serie o use Coord. Manuales';
+    }, { enableHighAccuracy: true, timeout: 8000, maximumAge: 0 });
   } else {
-    if (lblCoord) lblCoord.textContent = '❌ Geolocalización no soportada';
+    reiniciarCajasGpsVisualIAB();
+    if (lblCoord) lblCoord.textContent = 'Coordenadas no leídas aún';
   }
 }
+
+// Soporte Web Serial API para receptor GPS USB / Serie NMEA 0183 a bordo
+var cerPuertoSerialGps = null;
+var cerLectorSerialGps = null;
+
+async function conectarGpsUsbSerialNMEA() {
+  const lblCoord = document.getElementById('lblCoordenadasGps');
+  if (!('serial' in navigator)) {
+    alert('Web Serial API no soportada en este navegador. Utilice Google Chrome o Microsoft Edge para conectar GPS por USB/Serie.');
+    return;
+  }
+  try {
+    if (lblCoord) lblCoord.textContent = '⏳ Seleccione el puerto USB / Serie del GPS...';
+    cerPuertoSerialGps = await navigator.serial.requestPort();
+    await cerPuertoSerialGps.open({ baudRate: 4800 });
+    
+    if (lblCoord) lblCoord.textContent = '📡 Conectado a GPS USB. Decodificando sentencias NMEA...';
+    
+    const textDecoder = new TextDecoderStream();
+    cerPuertoSerialGps.readable.pipeTo(textDecoder.writable);
+    cerLectorSerialGps = textDecoder.readable.getReader();
+    
+    let buffer = '';
+    while (true) {
+      const { value, done } = await cerLectorSerialGps.read();
+      if (done) break;
+      buffer += value;
+      let lineas = buffer.split('\n');
+      buffer = lineas.pop();
+      for (let linea of lineas) {
+        linea = linea.trim();
+        if (linea.startsWith('$GPRMC') || linea.startsWith('$GNRMC')) {
+          let partes = linea.split(',');
+          if (partes[2] === 'A') {
+            let latRaw = partes[3], latHem = partes[4];
+            let lonRaw = partes[5], lonHem = partes[6];
+            if (latRaw && latHem && lonRaw && lonHem) {
+              let latDeg = parseFloat(latRaw.substring(0, 2));
+              let latMin = parseFloat(latRaw.substring(2));
+              let latFinal = (latHem === 'S' ? -1 : 1) * (latDeg + (latMin / 60));
+              let lonDeg = parseFloat(lonRaw.substring(0, 3));
+              let lonMin = parseFloat(lonRaw.substring(3));
+              let lonFinal = (lonHem === 'W' ? -1 : 1) * (lonDeg + (lonMin / 60));
+              aplicarCoordenadasGpsRealesIAB(latFinal, lonFinal, 'GPS USB / NMEA');
+            }
+          }
+        } else if (linea.startsWith('$GPGGA') || linea.startsWith('$GNGGA')) {
+          let partes = linea.split(',');
+          let fix = parseInt(partes[6], 10);
+          if (fix > 0) {
+            let latRaw = partes[2], latHem = partes[3];
+            let lonRaw = partes[4], lonHem = partes[5];
+            if (latRaw && latHem && lonRaw && lonHem) {
+              let latDeg = parseFloat(latRaw.substring(0, 2));
+              let latMin = parseFloat(latRaw.substring(2));
+              let latFinal = (latHem === 'S' ? -1 : 1) * (latDeg + (latMin / 60));
+              let lonDeg = parseFloat(lonRaw.substring(0, 3));
+              let lonMin = parseFloat(lonRaw.substring(3));
+              let lonFinal = (lonHem === 'W' ? -1 : 1) * (lonDeg + (lonMin / 60));
+              aplicarCoordenadasGpsRealesIAB(latFinal, lonFinal, 'GPS USB / NMEA');
+            }
+          }
+        }
+      }
+    }
+  } catch (err) {
+    if (lblCoord) lblCoord.textContent = '❌ Error GPS USB: ' + err.message;
+  }
+}
+
+function formatearCoordNavalIAB(lat, lon) {
+  const latHem = lat >= 0 ? 'N' : 'S';
+  const lonHem = lon >= 0 ? 'E' : 'W';
+  const latAbs = Math.abs(lat);
+  const lonAbs = Math.abs(lon);
+  const latGrad = Math.floor(latAbs);
+  const latMin = ((latAbs - latGrad) * 60).toFixed(1);
+  const lonGrad = Math.floor(lonAbs);
+  const lonMin = ((lonAbs - lonGrad) * 60).toFixed(1);
+  return `${String(latGrad).padStart(2, '0')}°${String(latMin).padStart(4, '0')}'${latHem}, ${String(lonGrad).padStart(3, '0')}°${String(lonMin).padStart(4, '0')}'${lonHem}`;
+}
+
+function toggleSelectorHusoIAB() {
+  const box = document.getElementById('boxDesplegableHuso');
+  const btn = document.getElementById('btnToggleHuso');
+  if (!box) return;
+  const abierto = (box.style.display === 'block');
+  box.style.display = abierto ? 'none' : 'block';
+  if (btn) btn.textContent = abierto ? '⚙️ Cambiar' : '✖ Cerrar';
+}
+
+function onSeleccionarHusoIAB(val) {
+  cambiarHusoHorarioIAB(val);
+  const box = document.getElementById('boxDesplegableHuso');
+  const btn = document.getElementById('btnToggleHuso');
+  if (box) box.style.display = 'none';
+  if (btn) btn.textContent = '⚙️ Cambiar';
+}
+
+function obtenerTextoHusoIAB(valHuso) {
+  let offsetHoras = 0;
+  if (valHuso === 'auto') {
+    const offsetMin = new Date().getTimezoneOffset();
+    offsetHoras = -offsetMin / 60;
+  } else {
+    offsetHoras = parseFloat(valHuso);
+  }
+  const letra = obtenerLetraHusoIAB(offsetHoras);
+  const signo = offsetHoras >= 0 ? '+' : '';
+  const numStr = Number.isInteger(offsetHoras) ? offsetHoras : offsetHoras.toFixed(1);
+  return `UTC${signo}${numStr} (${letra})`;
+}
+
+function cambiarHusoHorarioIAB(val) {
+  cerHusoHorarioIAB = val;
+  const lblTexto = document.getElementById('lblHusoTextoVisible');
+  if (lblTexto) lblTexto.textContent = obtenerTextoHusoIAB(val);
+  if (cerFuenteOcasoIAB === 'base') calcularOcasoBaseIAB();
+  else if (cerFuenteOcasoIAB === 'coord') calcularOcasoCoordManualIAB();
+  else {
+    actualizarHoraObjetivoIAB();
+  }
+}
+
+function setFuenteOcasoIAB(fuente) {
+  cerFuenteOcasoIAB = fuente;
+  const btnB = document.getElementById('btnFuenteBase');
+  const btnG = document.getElementById('btnFuenteGps');
+  const btnC = document.getElementById('btnFuenteCoordManual');
+  const btnM = document.getElementById('btnFuenteManual');
+  const boxB = document.getElementById('subBoxBase');
+  const boxG = document.getElementById('subBoxGps');
+  const boxC = document.getElementById('subBoxCoord');
+  const boxM = document.getElementById('subBoxManual');
+
+  if (btnB) btnB.className = 'action-btn' + (fuente === 'base' ? ' primary' : '');
+  if (btnG) btnG.className = 'action-btn' + (fuente === 'gps' ? ' primary' : '');
+  if (btnC) btnC.className = 'action-btn' + (fuente === 'coord' ? ' primary' : '');
+  if (btnM) btnM.className = 'action-btn' + (fuente === 'manual' ? ' primary' : '');
+
+  if (boxB) boxB.style.display = (fuente === 'base' ? 'flex' : 'none');
+  if (boxG) boxG.style.display = (fuente === 'gps' ? 'flex' : 'none');
+  if (boxC) boxC.style.display = (fuente === 'coord' ? 'flex' : 'none');
+  if (boxM) boxM.style.display = (fuente === 'manual' ? 'flex' : 'none');
+
+  if (fuente === 'base') calcularOcasoBaseIAB();
+  if (fuente === 'gps') obtenerGpsYCalcularOcasoIAB();
+  else if (fuente === 'coord') calcularOcasoCoordManualIAB();
+  else if (fuente === 'manual') actualizarHoraObjetivoIAB();
+}
+
+function calcularHoraOcasoIAB(lat, lon, dateObj) {
+  const d = dateObj || new Date();
+  const start = new Date(d.getFullYear(), 0, 0);
+  const diff = d - start;
+  const oneDay = 1000 * 60 * 60 * 24;
+  const N = Math.floor(diff / oneDay);
+  const lngHour = lon / 15.0;
+  const t = N + ((18 - lngHour) / 24.0);
+  const M = (0.9856 * t) - 3.289;
+  const toRad = Math.PI / 180.0;
+  const toDeg = 180.0 / Math.PI;
+  let L = M + (1.916 * Math.sin(M * toRad)) + (0.020 * Math.sin(2 * M * toRad)) + 282.634;
+  L = (L + 360) % 360;
+  let RA = toDeg * Math.atan(0.91764 * Math.tan(L * toRad));
+  RA = (RA + 360) % 360;
+  const Lquadrant = Math.floor(L / 90) * 90;
+  const RAquadrant = Math.floor(RA / 90) * 90;
+  RA = RA + (Lquadrant - RAquadrant);
+  RA = RA / 15.0;
+  const sinDec = 0.39782 * Math.sin(L * toRad);
+  const cosDec = Math.cos(Math.asin(sinDec));
+  const zenith = 90.8333;
+  const cosH = (Math.cos(zenith * toRad) - (sinDec * Math.sin(lat * toRad))) / (cosDec * Math.cos(lat * toRad));
+  if (cosH > 1 || cosH < -1) return '20:00';
+  let H = toDeg * Math.acos(cosH);
+  H = H / 15.0;
+  const T = H + RA - (0.06571 * t) - 6.622;
+  let UT = (T - lngHour + 24) % 24;
+  let offsetHoras = 0;
+  if (cerHusoHorarioIAB === 'auto') {
+    offsetHoras = -(d.getTimezoneOffset() / 60);
+  } else {
+    offsetHoras = parseFloat(cerHusoHorarioIAB);
+  }
+  let localHours = (UT + offsetHoras + 24) % 24;
+  const hh = Math.floor(localHours);
+  const mm = Math.round((localHours - hh) * 60);
+  return String(hh).padStart(2, '0') + ':' + String(mm % 60).padStart(2, '0');
+}
+
+function calcularOcasoBaseIAB() {
+  const sel = document.getElementById('selBaseNaval');
+  const base = sel ? sel.value : 'Rota';
+  const catalogoBases = {
+    'Rota': { lat: 36.6200, lon: -6.3500, nombre: 'Base Naval de Rota' },
+    'Ferrol': { lat: 43.4833, lon: -8.2333, nombre: 'Arsenal de Ferrol' },
+    'Cartagena': { lat: 37.6000, lon: -0.9833, nombre: 'Arsenal de Cartagena' },
+    'San Fernando': { lat: 36.4667, lon: -6.2000, nombre: 'Base Naval de La Carraca / San Fernando' },
+    'Las Palmas': { lat: 28.1333, lon: -15.4333, nombre: 'Arsenal de Las Palmas' },
+    'Marin': { lat: 42.4000, lon: -8.7000, nombre: 'ENM de Marín' },
+    'Mahon': { lat: 39.8833, lon: 4.2667, nombre: 'Estación Naval de Mahón' },
+    'Ceuta': { lat: 35.8894, lon: -5.3198, nombre: 'CN de Ceuta' },
+    'Melilla': { lat: 35.2923, lon: -2.9381, nombre: 'CN de Melilla' },
+    'Malaga': { lat: 36.7167, lon: -4.4167, nombre: 'Puerto de Málaga' },
+    'Alicante': { lat: 38.3452, lon: -0.4810, nombre: 'Puerto de Alicante' },
+    'Valencia': { lat: 39.4699, lon: -0.3763, nombre: 'CN de Valencia' },
+    'Barcelona': { lat: 41.3851, lon: 2.1734, nombre: 'CN de Barcelona' },
+    'Palma': { lat: 39.5696, lon: 2.6502, nombre: 'CN de Palma de Mallorca' }
+  };
+  const b = catalogoBases[base] || catalogoBases['Rota'];
+  cerPosicionLat = b.lat;
+  cerPosicionLon = b.lon;
+  cerPosicionNombre = b.nombre;
+  const ocasoStr = calcularHoraOcasoIAB(cerPosicionLat, cerPosicionLon);
+  if (cerModoIAB === 'arriado') cerHoraObjetivoIAB = ocasoStr;
+  refrescarPosicionYHoraEnPantallaIAB();
+  actualizarTickRelojIAB();
+}
+
+function calcularOcasoCoordManualIAB() {
+  const inLatGrad = document.getElementById('inputCoordLatGrad');
+  const inLatMin = document.getElementById('inputCoordLatMin');
+  const selLatHem = document.getElementById('selCoordLatHem');
+  const inLonGrad = document.getElementById('inputCoordLonGrad');
+  const inLonMin = document.getElementById('inputCoordLonMin');
+  const selLonHem = document.getElementById('selCoordLonHem');
+
+  if (inLatGrad && inLatMin && selLatHem && inLonGrad && inLonMin && selLonHem) {
+    const latG = Math.abs(parseFloat(inLatGrad.value)) || 0;
+    const latM = Math.abs(parseFloat(inLatMin.value)) || 0;
+    const latSign = (selLatHem.value === 'S') ? -1 : 1;
+    cerPosicionLat = latSign * (latG + (latM / 60));
+
+    const lonG = Math.abs(parseFloat(inLonGrad.value)) || 0;
+    const lonM = Math.abs(parseFloat(inLonMin.value)) || 0;
+    const lonSign = (selLonHem.value === 'W') ? -1 : 1;
+    cerPosicionLon = lonSign * (lonG + (lonM / 60));
+
+    cerPosicionNombre = 'Coordenadas Manuales';
+    const ocasoStr = calcularHoraOcasoIAB(cerPosicionLat, cerPosicionLon);
+    if (cerModoIAB === 'arriado') cerHoraObjetivoIAB = ocasoStr;
+    refrescarPosicionYHoraEnPantallaIAB();
+    actualizarTickRelojIAB();
+  }
+}
+
+
 
 function obtenerLetraHusoIAB(offsetHoras) {
   const mapLetras = {
@@ -321,7 +724,7 @@ function refrescarPosicionYHoraEnPantallaIAB() {
   }
   const letraHuso = obtenerLetraHusoIAB(offset);
   if (lblDisp) {
-    lblDisp.textContent = `${cerHoraObjetivoIAB} ${letraHuso}`;
+    lblDisp.textContent = `${cerHoraObjetivoIAB} ${letraHuso}`; const lblBox = document.getElementById('lblHusoNatoBox'); if (lblBox) lblBox.textContent = letraHuso;
   }
   if (lblTitulo) {
     lblTitulo.textContent = (cerModoIAB === 'izado') ? '🎯 HORA DEL IZADO:' : '🎯 HORA DEL ARRIADO:';
@@ -422,6 +825,15 @@ function actualizarTickRelojIAB() {
   if (lblCuenta) {
     lblCuenta.textContent = `${hh}:${mm}:${ss}`;
   }
+  const letraHuso = obtenerLetraHusoIAB(offset);
+  const lblBox = document.getElementById('lblHusoNatoBox');
+  if (lblBox) {
+    lblBox.textContent = letraHuso;
+  }
+  const lblHusoVis = document.getElementById('lblHusoTextoVisible');
+  if (lblHusoVis && typeof obtenerTextoHusoIAB === 'function') {
+    lblHusoVis.textContent = obtenerTextoHusoIAB(cerHusoHorarioIAB);
+  }
   verificarDisparoAutomaticoCeremonial(hh, mm, ss);
 }
 
@@ -434,7 +846,7 @@ setTimeout(() => {
 }, 100);
 
 
-    let modo = 'izado', conGuardia = true, modalidadPresenten = 'voz', acompañamiento = 'himno', oracion = 'corneta';audioEjecucion = 'automatico';;    let cerPuntosActivosManualIAA = [], arriado = 'manual', ejecucion = 'automatica', posicion = { tipo: 'base', lat: 37.2521, lon: -6.3675 };      const audioURLs = {'1_izado': 'audios/01_01_senales_izado.mp3', '1_arriado': 'audios/01_02_senales_arriado.mp3', '2': 'audios/02_firmes.mp3', '3_voz': 'audios/03_01_presenten_voz.mp3', '3_corneta': 'audios/03_02_presenten_corneta.wav', '4': 'audios/04_ejecutiva.wav', '5_himno': 'audios/05_01_himno.mp3', '5_chifle': 'audios/05_02_chifle.mp3', '5_corneta': 'audios/05_03_corneta.wav', '5_himno_chifle': 'audios/05_04_himno_chifle.mp3', '6': 'audios/06_descansen.wav', '7': 'audios/07_envainen.wav', '8_corneta': 'audios/event08_01_CornetaToquedeOracion.wav', '8_Cantada': 'audios/08_02_oracion_musica.mp3', '8_leida': 'audios/event08_03_VOZORACION.mp3', '8_ninguno': 'audios/event08_03_NINGUNO.mp3'};      function actualizarReloj() {      const ahora = new Date();      document.getElementById('reloj').textContent = String(ahora.getHours()).padStart(2,'0') + ':' + String(ahora.getMinutes()).padStart(2,'0') + ':' + String(ahora.getSeconds()).padStart(2,'0');      document.getElementById('fechaInfo').textContent = ahora.toLocaleDateString('es-ES');      const husoLocal = -(ahora.getTimezoneOffset() / 60);      document.getElementById('husoInfo').textContent = 'UTC ' + (husoLocal >= 0 ? '+' : '') + husoLocal;    }    actualizarReloj();    setInterval(actualizarReloj, 1000);         function setAudioEjecucion(a) {   audioEjecucion = a;   updateDots(); }    function updateDots() {    function setDot(id, active) {      const el = document.getElementById(id);      if (el) el.style.opacity = active ? '1' : '0.2';    }    setDot('dotIzado', modo === 'izado');    setDot('dotArriado', modo === 'arriado');    setDot('dotGuardiaSi', conGuardia);    setDot('dotGuardiaNo', !conGuardia);    setDot('dotPresentenVoz', modalidadPresenten === 'voz');    setDot('dotPresentenCorneta', modalidadPresenten === 'corneta');    setDot('dotArriadoManual', arriado === 'manual');    setDot('dotArriadoOcaso', arriado === 'ocaso');    setDot('dotAcompHimno', acompañamiento === 'himno');    setDot('dotAcompChifle', acompañamiento === 'chifle');    setDot('dotAcompCorneta', acompañamiento === 'corneta');    setDot('dotAcompHimnoChifle', acompañamiento === 'himno_chifle');    setDot('dotOracionCorneta', oracion === 'corneta');    setDot('dotOracionCantada', oracion === 'Cantada');    setDot('dotOracionLeida', oracion === 'leida');    setDot('dotOracionNinguna', oracion === 'ninguna');    setDot('dotOracionNinguno', oracion === 'ninguno');    setDot('dotAudioAuto', audioEjecucion === 'automatico');    setDot('dotAudioManual', audioEjecucion === 'manual');  }          function setModo(m) {
+    let modo = 'izado', conGuardia = true, modalidadPresenten = 'voz', acompañamiento = 'himno', oracion = 'corneta';audioEjecucion = 'automatico';;    let cerPuntosActivosManualIAA = [], arriado = 'manual', ejecucion = 'automatica', posicion = { tipo: 'base', lat: 37.2521, lon: -6.3675 };      const audioURLs = {'1_izado': 'audios/01_01_senales_izado.mp3', '1_arriado': 'audios/01_02_senales_arriado.mp3', '2': 'audios/02_firmes.mp3', '3_voz': 'audios/03_01_presenten_voz.mp3', '3_corneta': 'audios/03_02_presenten_corneta.wav', '4': 'audios/04_ejecutiva.wav', '5_himno': 'audios/05_01_himno.mp3', '5_chifle': 'audios/05_02_chifle.mp3', '5_corneta': 'audios/05_03_corneta.wav', '5_himno_chifle': 'audios/05_04_himno_chifle.mp3', '6': 'audios/06_descansen.wav', '7': 'audios/07_envainen.wav', '8_corneta': 'audios/event08_01_CornetaToquedeOracion.wav', '8_Cantada': 'audios/08_02_oracion_musica.mp3', '8_leida': 'audios/event08_03_VOZORACION.mp3', '8_ninguno': 'audios/event08_03_NINGUNO.mp3'};      function actualizarReloj() {      const ahora = new Date();      document.getElementById('reloj').textContent = String(ahora.getHours()).padStart(2,'0') + ':' + String(ahora.getMinutes()).padStart(2,'0') + ':' + String(ahora.getSeconds()).padStart(2,'0');      document.getElementById('fechaInfo').textContent = ahora.toLocaleDateString('es-ES');      if (typeof obtenerTextoHusoIAB === 'function') {        const lblHuso = document.getElementById('lblHusoTextoVisible');        if (lblHuso) lblHuso.textContent = obtenerTextoHusoIAB(cerHusoHorarioIAB);      }    }    actualizarReloj();    setInterval(actualizarReloj, 1000);         function setAudioEjecucion(a) {   audioEjecucion = a;   updateDots(); }    function updateDots() {    function setDot(id, active) {      const el = document.getElementById(id);      if (el) el.style.opacity = active ? '1' : '0.2';    }    setDot('dotIzado', modo === 'izado');    setDot('dotArriado', modo === 'arriado');    setDot('dotGuardiaSi', conGuardia);    setDot('dotGuardiaNo', !conGuardia);    setDot('dotPresentenVoz', modalidadPresenten === 'voz');    setDot('dotPresentenCorneta', modalidadPresenten === 'corneta');    setDot('dotArriadoManual', arriado === 'manual');    setDot('dotArriadoOcaso', arriado === 'ocaso');    setDot('dotAcompHimno', acompañamiento === 'himno');    setDot('dotAcompChifle', acompañamiento === 'chifle');    setDot('dotAcompCorneta', acompañamiento === 'corneta');    setDot('dotAcompHimnoChifle', acompañamiento === 'himno_chifle');    setDot('dotOracionCorneta', oracion === 'corneta');    setDot('dotOracionCantada', oracion === 'Cantada');    setDot('dotOracionLeida', oracion === 'leida');    setDot('dotOracionNinguna', oracion === 'ninguna');    setDot('dotOracionNinguno', oracion === 'ninguno');    setDot('dotAudioAuto', audioEjecucion === 'automatico');    setDot('dotAudioManual', audioEjecucion === 'manual');  }          function setModo(m) {
   modo = m;
   calcularPuntos();
   updateUI();

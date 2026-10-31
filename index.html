@@ -40,74 +40,70 @@
                   🔌 Conectar GPS USB / Serie
                 </button>
               </div>
-              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+              <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap:6px; width:100%; box-sizing:border-box;">
                 <!-- LATITUD GPS DISPLAY -->
-                <div style="background:#070d1e; padding:6px 8px; border-radius:6px; border:1px solid #1e293b;">
-                  <div style="font-size:10.5px; color:#94a3b8; font-weight:800; margin-bottom:4px;">LATITUD:</div>
-                  <div style="display:flex; align-items:center; gap:4px;">
-                    <div id="dispGpsLatGrad" style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;">00</div>
-                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">°</span>
-                    <div id="dispGpsLatMin" style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;">00</div>
-                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">'</span>
-                    <div id="dispGpsLatHem" style="background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#38bdf8; font-size:13px; font-weight:900; padding:5px 6px;">N</div>
+                <div style="background:#070d1e; padding:6px; border-radius:6px; border:1px solid #1e293b; box-sizing:border-box; overflow:hidden;">
+                  <div style="font-size:10px; color:#94a3b8; font-weight:800; margin-bottom:3px;">LATITUD:</div>
+                  <div style="display:flex; align-items:center; gap:3px; width:100%; box-sizing:border-box;">
+                    <div id="dispGpsLatGrad" style="flex:1; min-width:0; background:#0b152d; border:1px solid #38bdf8; border-radius:4px; color:#fff; font-size:12.5px; font-weight:800; padding:4px 2px; text-align:center; box-sizing:border-box;">00</div>
+                    <span style="color:#94a3b8; font-weight:800; font-size:11px;">°</span>
+                    <div id="dispGpsLatMin" style="flex:1.3; min-width:0; background:#0b152d; border:1px solid #38bdf8; border-radius:4px; color:#fff; font-size:12.5px; font-weight:800; padding:4px 2px; text-align:center; box-sizing:border-box;">00.0</div>
+                    <span style="color:#94a3b8; font-weight:800; font-size:11px;">'</span>
+                    <div id="dispGpsLatHem" style="width:26px; min-width:26px; background:#0c4a6e; border:1px solid #38bdf8; border-radius:4px; color:#38bdf8; font-size:12px; font-weight:900; padding:4px 1px; text-align:center; box-sizing:border-box;">N</div>
                   </div>
                 </div>
-
                 <!-- LONGITUD GPS DISPLAY -->
-                <div style="background:#070d1e; padding:6px 8px; border-radius:6px; border:1px solid #1e293b;">
-                  <div style="font-size:10.5px; color:#94a3b8; font-weight:800; margin-bottom:4px;">LONGITUD:</div>
-                  <div style="display:flex; align-items:center; gap:4px;">
-                    <div id="dispGpsLonGrad" style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;">000</div>
-                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">°</span>
-                    <div id="dispGpsLonMin" style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;">00</div>
-                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">'</span>
-                    <div id="dispGpsLonHem" style="background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#38bdf8; font-size:13px; font-weight:900; padding:5px 6px;">W</div>
+                <div style="background:#070d1e; padding:6px; border-radius:6px; border:1px solid #1e293b; box-sizing:border-box; overflow:hidden;">
+                  <div style="font-size:10px; color:#94a3b8; font-weight:800; margin-bottom:3px;">LONGITUD:</div>
+                  <div style="display:flex; align-items:center; gap:3px; width:100%; box-sizing:border-box;">
+                    <div id="dispGpsLonGrad" style="flex:1; min-width:0; background:#0b152d; border:1px solid #38bdf8; border-radius:4px; color:#fff; font-size:12.5px; font-weight:800; padding:4px 2px; text-align:center; box-sizing:border-box;">00</div>
+                    <span style="color:#94a3b8; font-weight:800; font-size:11px;">°</span>
+                    <div id="dispGpsLonMin" style="flex:1.3; min-width:0; background:#0b152d; border:1px solid #38bdf8; border-radius:4px; color:#fff; font-size:12.5px; font-weight:800; padding:4px 2px; text-align:center; box-sizing:border-box;">00.0</div>
+                    <span style="color:#94a3b8; font-weight:800; font-size:11px;">'</span>
+                    <div id="dispGpsLonHem" style="width:26px; min-width:26px; background:#0c4a6e; border:1px solid #38bdf8; border-radius:4px; color:#38bdf8; font-size:12px; font-weight:900; padding:4px 1px; text-align:center; box-sizing:border-box;">W</div>
                   </div>
                 </div>
               </div>
               <div style="font-size:11px; color:#94a3b8; text-align:center;" id="lblCoordenadasGps">Coordenadas no leídas aún</div>
+              <div style="display:flex; justify-content:space-between; align-items:center; background:#070d1e; padding:6px 10px; border-radius:5px; border:1px solid #1e293b; font-size:11px;">
+                <span style="color:#94a3b8;">🌐 Huso natural de posición: <b id="lblHusoEstimadoGps" style="color:#38bdf8;">--</b></span>
+                <span style="color:#94a3b8;">☀️ Ocaso solar puro: <b id="lblOcasoUtcGps" style="color:#fbbf24;">--:-- Z</b></span>
+              </div>
             </div>            <!-- OP 3: COORDENADAS MANUALES (LATITUD Y LONGITUD) -->            <div id="subBoxCoord" style="display:none; flex-direction:column; gap:8px; background:#0b152d; padding:10px; border-radius:6px; border:1px solid #1e3a8a;">
               <div style="font-size:11.5px; color:#cbd5e1; font-weight:700;">Introducir Coordenadas Manuales (Grados y Minutos):</div>
-              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
-                <!-- LATITUD MILITAR -->
-                <div style="background:#070d1e; padding:6px 8px; border-radius:6px; border:1px solid #1e293b;">
-                  <div style="font-size:10.5px; color:#94a3b8; font-weight:800; margin-bottom:4px;">LATITUD:</div>
-                  <div style="display:flex; align-items:center; gap:4px;">
-                    <input type="number" id="inputCoordLatGrad" value="36" min="0" max="90" placeholder="36"
-                      style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;"
-                      oninput="calcularOcasoCoordManualIAB()">
-                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">°</span>
-                    <input type="number" step="0.1" id="inputCoordLatMin" value="37.2" min="0" max="59.99" placeholder="37.2"
-                      style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;"
-                      oninput="calcularOcasoCoordManualIAB()">
-                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">'</span>
-                    <select id="selCoordLatHem" style="background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#38bdf8; font-size:13px; font-weight:900; padding:5px 4px;"
-                      onchange="calcularOcasoCoordManualIAB()">
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:6px; box-sizing:border-box;">
+                <!-- LATITUD MANUAL -->
+                <div style="background:#070d1e; padding:5px 6px; border-radius:6px; border:1px solid #1e293b; box-sizing:border-box; overflow:hidden;">
+                  <div style="font-size:10px; color:#94a3b8; font-weight:800; margin-bottom:3px;">LATITUD:</div>
+                  <div style="display:flex; align-items:center; gap:2px; width:100%; box-sizing:border-box;">
+                    <input type="number" id="inputCoordLatGrad" value="36" min="0" max="90" onchange="calcularOcasoCoordManualIAB()" style="flex:1; min-width:0; background:#0b152d; border:1px solid #38bdf8; border-radius:4px; color:#fff; font-size:12px; font-weight:800; padding:4px 1px; text-align:center; box-sizing:border-box;">
+                    <span style="color:#94a3b8; font-weight:800; font-size:11px;">°</span>
+                    <input type="number" id="inputCoordLatMin" value="37.2" min="0" max="59.9" step="0.1" onchange="calcularOcasoCoordManualIAB()" style="flex:1.2; min-width:0; background:#0b152d; border:1px solid #38bdf8; border-radius:4px; color:#fff; font-size:12px; font-weight:800; padding:4px 1px; text-align:center; box-sizing:border-box;">
+                    <span style="color:#94a3b8; font-weight:800; font-size:11px;">'</span>
+                    <select id="selCoordLatHem" onchange="calcularOcasoCoordManualIAB()" style="width:28px; min-width:28px; background:#0c4a6e; border:1px solid #38bdf8; border-radius:4px; color:#38bdf8; font-size:11px; font-weight:900; padding:4px 1px; text-align:center; box-sizing:border-box;">
                       <option value="N" selected>N</option>
                       <option value="S">S</option>
                     </select>
                   </div>
                 </div>
-
-                <!-- LONGITUD MILITAR -->
-                <div style="background:#070d1e; padding:6px 8px; border-radius:6px; border:1px solid #1e293b;">
-                  <div style="font-size:10.5px; color:#94a3b8; font-weight:800; margin-bottom:4px;">LONGITUD:</div>
-                  <div style="display:flex; align-items:center; gap:4px;">
-                    <input type="number" id="inputCoordLonGrad" value="6" min="0" max="180" placeholder="006"
-                      style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;"
-                      oninput="calcularOcasoCoordManualIAB()">
-                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">°</span>
-                    <input type="number" step="0.1" id="inputCoordLonMin" value="21.0" min="0" max="59.99" placeholder="21.0"
-                      style="flex:1; min-width:46px; background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#fff; font-size:13px; font-weight:800; padding:5px 2px; text-align:center;"
-                      oninput="calcularOcasoCoordManualIAB()">
-                    <span style="color:#94a3b8; font-weight:800; font-size:12px;">'</span>
-                    <select id="selCoordLonHem" style="background:#0b152d; border:1.5px solid #38bdf8; border-radius:4px; color:#38bdf8; font-size:13px; font-weight:900; padding:5px 4px;"
-                      onchange="calcularOcasoCoordManualIAB()">
+                <!-- LONGITUD MANUAL -->
+                <div style="background:#070d1e; padding:5px 6px; border-radius:6px; border:1px solid #1e293b; box-sizing:border-box; overflow:hidden;">
+                  <div style="font-size:10px; color:#94a3b8; font-weight:800; margin-bottom:3px;">LONGITUD:</div>
+                  <div style="display:flex; align-items:center; gap:2px; width:100%; box-sizing:border-box;">
+                    <input type="number" id="inputCoordLonGrad" value="6" min="0" max="180" onchange="calcularOcasoCoordManualIAB()" style="flex:1; min-width:0; background:#0b152d; border:1px solid #38bdf8; border-radius:4px; color:#fff; font-size:12px; font-weight:800; padding:4px 1px; text-align:center; box-sizing:border-box;">
+                    <span style="color:#94a3b8; font-weight:800; font-size:11px;">°</span>
+                    <input type="number" id="inputCoordLonMin" value="21.0" min="0" max="59.9" step="0.1" onchange="calcularOcasoCoordManualIAB()" style="flex:1.2; min-width:0; background:#0b152d; border:1px solid #38bdf8; border-radius:4px; color:#fff; font-size:12px; font-weight:800; padding:4px 1px; text-align:center; box-sizing:border-box;">
+                    <span style="color:#94a3b8; font-weight:800; font-size:11px;">'</span>
+                    <select id="selCoordLonHem" onchange="calcularOcasoCoordManualIAB()" style="width:28px; min-width:28px; background:#0c4a6e; border:1px solid #38bdf8; border-radius:4px; color:#38bdf8; font-size:11px; font-weight:900; padding:4px 1px; text-align:center; box-sizing:border-box;">
                       <option value="W" selected>W</option>
                       <option value="E">E</option>
                     </select>
                   </div>
                 </div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; background:#070d1e; padding:6px 10px; border-radius:5px; border:1px solid #1e293b; font-size:11px; margin-top:2px;">
+                <span style="color:#94a3b8;">🌐 Huso natural de posición: <b id="lblHusoEstimadoCoord" style="color:#38bdf8;">--</b></span>
+                <span style="color:#94a3b8;">☀️ Ocaso solar puro: <b id="lblOcasoUtcCoord" style="color:#fbbf24;">--:-- Z</b></span>
               </div>
               <div style="font-size:10px; color:#64748b; font-style:italic;">Formato militar náutico: Grados y Minutos con decimales (ej. Rota: 36°37.2'N · 006°21.0'W).</div>
             </div>            <!-- OP 4: ENTRADA DIRECTA POR ORDEN DIARIA -->            <div id="subBoxManual" style="display:none; flex-direction:column; gap:6px; background:#0b152d; padding:10px; border-radius:6px; border:1px solid #1e3a8a;">              <div style="display:flex; align-items:center; justify-content:space-between;">                <div>                  <div style="font-size:11.5px; color:#cbd5e1; font-weight:700;">Hora fijada manualmente:</div>                  <div style="font-size:10px; color:#94a3b8;">Entrada horaria fija sin cálculo solar</div>                </div>                <input type="time" id="inputHoraArriadoManual" value="19:30"                   style="background:#070d1e; border:1.5px solid #38bdf8; border-radius:6px; color:#fff; font-size:16px; font-weight:900; padding:6px 10px; text-align:center;"                  oninput="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();" onchange="actualizarHoraObjetivoIAB(); actualizarTickRelojIAB();">              </div>            </div>          </div>          <!-- TARJETA DESTACADA EN PANTALLA: POSICIÓN Y HORA DEL ARRIADO -->          <div style="margin-top:12px; background:#0b152d; border:1.5px solid #1e3a8a; border-radius:8px; padding:12px;">            <!-- LÍNEA 1: POSICIÓN EN PANTALLA (SOLICITUD EXPLÍCITA) -->            <div id="rowPosicionPantalla" style="display:flex; justify-content:space-between; align-items:center; padding-bottom:8px; margin-bottom:8px; border-bottom:1px solid #1e293b; flex-wrap:wrap; gap:4px;">              <span style="font-size:11px; font-weight:800; color:#94a3b8; display:flex; align-items:center; gap:4px;">                📍 POSICIÓN EN PANTALLA:              </span>              <span style="font-size:12px; font-weight:900; color:#38bdf8; text-align:right;" id="lblPosicionDisplay">                36°37.2'N, 006°21.0'W · Base Naval de Rota              </span>            </div>            <!-- LÍNEA 2: HORA DEL ARRIADO / OCASO Y CUENTA ATRÁS -->            <div style="display:flex; justify-content:space-between; align-items:center;">              <div>                <div style="font-size:10.5px; font-weight:800; color:#94a3b8; text-transform:uppercase;" id="lblTituloHoraEfectiva">🎯 HORA DEL ARRIADO:</div>                <div style="font-size:22px; font-weight:900; color:#fbbf24; font-variant-numeric:tabular-nums;" id="lblHoraCeremonialDisplay">19:30h</div>              </div>              <div style="text-align:right;">                <div style="text-align:right;">
@@ -259,44 +255,85 @@ function setFuenteOcasoIAB(fuente) {
   else if (fuente === 'manual') actualizarHoraObjetivoIAB();
 }
 
-function calcularHoraOcasoIAB(lat, lon, dateObj) {
+function calcularHoraOcasoUTC_Decimal(lat, lon, dateObj) {
   const d = dateObj || new Date();
   const start = new Date(d.getFullYear(), 0, 0);
   const diff = d - start;
   const oneDay = 1000 * 60 * 60 * 24;
   const N = Math.floor(diff / oneDay);
+  
+  // Longitud en horas (positiva Este, negativa Oeste)
   const lngHour = lon / 15.0;
-  const t = N + ((18 - lngHour) / 24.0);
+  const t = N + ((18.0 - lngHour) / 24.0);
+  
+  // Anomalía media del Sol
   const M = (0.9856 * t) - 3.289;
   const toRad = Math.PI / 180.0;
   const toDeg = 180.0 / Math.PI;
+  
+  // Longitud verdadera del Sol
   let L = M + (1.916 * Math.sin(M * toRad)) + (0.020 * Math.sin(2 * M * toRad)) + 282.634;
   L = (L + 360) % 360;
+  
+  // Ascensión recta del Sol
   let RA = toDeg * Math.atan(0.91764 * Math.tan(L * toRad));
   RA = (RA + 360) % 360;
   const Lquadrant = Math.floor(L / 90) * 90;
   const RAquadrant = Math.floor(RA / 90) * 90;
-  RA = RA + (Lquadrant - RAquadrant);
-  RA = RA / 15.0;
+  RA = (RA + (Lquadrant - RAquadrant)) / 15.0;
+  
+  // Declinación del Sol
   const sinDec = 0.39782 * Math.sin(L * toRad);
   const cosDec = Math.cos(Math.asin(sinDec));
+  
+  // Cenit oficial naval (90° 50' = 90.8333° para refracción atmosférica estándar)
   const zenith = 90.8333;
   const cosH = (Math.cos(zenith * toRad) - (sinDec * Math.sin(lat * toRad))) / (cosDec * Math.cos(lat * toRad));
-  if (cosH > 1 || cosH < -1) return '20:00';
-  let H = toDeg * Math.acos(cosH);
-  H = H / 15.0;
+  
+  if (cosH > 1) return null; // Noche polar
+  if (cosH < -1) return null; // Día polar
+  
+  let H = (toDeg * Math.acos(cosH)) / 15.0;
+  
+  // Tiempo medio local (LMT)
   const T = H + RA - (0.06571 * t) - 6.622;
+  
+  // PASO 1 (DOCTRINA NAVAL): Cálculo del Ocaso estrictamente en TIEMPO UNIVERSAL (UTC / Zulu)
   let UT = (T - lngHour + 24) % 24;
+  return UT;
+}
+
+function estimarHusoNauticoPorLongitud(lon) {
+  // Cada 15° de longitud corresponde a 1 huso horario (centrado en el meridiano múltiplo de 15°)
+  // -7.5° a +7.5° -> 0 (Z)
+  // +7.5° a +22.5° -> +1 (A)
+  // -22.5° a -7.5° -> -1 (N)
+  return Math.round(lon / 15.0);
+}
+
+function calcularHoraOcasoIAB(lat, lon, dateObj) {
+  const d = dateObj || new Date();
+  const utDecimal = calcularHoraOcasoUTC_Decimal(lat, lon, d);
+  if (utDecimal === null) return '20:00';
+  
+  // PASO 2: Determinar qué huso aplicar
   let offsetHoras = 0;
   if (cerHusoHorarioIAB === 'auto') {
-    offsetHoras = -(d.getTimezoneOffset() / 60);
+    // Si está en automático, estimar el huso geográfico natural de la posición náutica por longitud
+    offsetHoras = estimarHusoNauticoPorLongitud(lon);
   } else {
-    offsetHoras = parseFloat(cerHusoHorarioIAB);
+    // Aplicar el huso fijado en el sistema por el Comandante (ej: Alfa +1, Zulu 0, etc.)
+    offsetHoras = parseFloat(cerHusoHorarioIAB) || 0;
   }
-  let localHours = (UT + offsetHoras + 24) % 24;
+  
+  // PASO 3: Aplicar corrección por el huso del sistema al ocaso UTC
+  let localHours = (utDecimal + offsetHoras + 24) % 24;
   const hh = Math.floor(localHours);
   const mm = Math.round((localHours - hh) * 60);
-  return String(hh).padStart(2, '0') + ':' + String(mm % 60).padStart(2, '0');
+  const finalH = (hh + Math.floor(mm / 60)) % 24;
+  const finalM = mm % 60;
+  
+  return String(finalH).padStart(2, '0') + ':' + String(finalM).padStart(2, '0');
 }
 
 function calcularOcasoBaseIAB() {
@@ -585,45 +622,7 @@ function setFuenteOcasoIAB(fuente) {
   else if (fuente === 'manual') actualizarHoraObjetivoIAB();
 }
 
-function calcularHoraOcasoIAB(lat, lon, dateObj) {
-  const d = dateObj || new Date();
-  const start = new Date(d.getFullYear(), 0, 0);
-  const diff = d - start;
-  const oneDay = 1000 * 60 * 60 * 24;
-  const N = Math.floor(diff / oneDay);
-  const lngHour = lon / 15.0;
-  const t = N + ((18 - lngHour) / 24.0);
-  const M = (0.9856 * t) - 3.289;
-  const toRad = Math.PI / 180.0;
-  const toDeg = 180.0 / Math.PI;
-  let L = M + (1.916 * Math.sin(M * toRad)) + (0.020 * Math.sin(2 * M * toRad)) + 282.634;
-  L = (L + 360) % 360;
-  let RA = toDeg * Math.atan(0.91764 * Math.tan(L * toRad));
-  RA = (RA + 360) % 360;
-  const Lquadrant = Math.floor(L / 90) * 90;
-  const RAquadrant = Math.floor(RA / 90) * 90;
-  RA = RA + (Lquadrant - RAquadrant);
-  RA = RA / 15.0;
-  const sinDec = 0.39782 * Math.sin(L * toRad);
-  const cosDec = Math.cos(Math.asin(sinDec));
-  const zenith = 90.8333;
-  const cosH = (Math.cos(zenith * toRad) - (sinDec * Math.sin(lat * toRad))) / (cosDec * Math.cos(lat * toRad));
-  if (cosH > 1 || cosH < -1) return '20:00';
-  let H = toDeg * Math.acos(cosH);
-  H = H / 15.0;
-  const T = H + RA - (0.06571 * t) - 6.622;
-  let UT = (T - lngHour + 24) % 24;
-  let offsetHoras = 0;
-  if (cerHusoHorarioIAB === 'auto') {
-    offsetHoras = -(d.getTimezoneOffset() / 60);
-  } else {
-    offsetHoras = parseFloat(cerHusoHorarioIAB);
-  }
-  let localHours = (UT + offsetHoras + 24) % 24;
-  const hh = Math.floor(localHours);
-  const mm = Math.round((localHours - hh) * 60);
-  return String(hh).padStart(2, '0') + ':' + String(mm % 60).padStart(2, '0');
-}
+
 
 function calcularOcasoBaseIAB() {
   const sel = document.getElementById('selBaseNaval');
@@ -716,19 +715,52 @@ function refrescarPosicionYHoraEnPantallaIAB() {
   const lblDisp = document.getElementById('lblHoraCeremonialDisplay');
   const rowPos = document.getElementById('rowPosicionPantalla');
   const lblTitulo = document.getElementById('lblTituloHoraEfectiva');
-  let offset = 0;
+  
+  // Huso fijado en el sistema
+  let offsetSistema = 0;
   if (cerHusoHorarioIAB === 'auto') {
-    offset = -(new Date().getTimezoneOffset() / 60);
+    offsetSistema = -(new Date().getTimezoneOffset() / 60);
   } else {
-    offset = parseFloat(cerHusoHorarioIAB);
+    offsetSistema = parseFloat(cerHusoHorarioIAB) || 0;
   }
-  const letraHuso = obtenerLetraHusoIAB(offset);
+  const letraHuso = obtenerLetraHusoIAB(offsetSistema);
+  
   if (lblDisp) {
-    lblDisp.textContent = `${cerHoraObjetivoIAB} ${letraHuso}`; const lblBox = document.getElementById('lblHusoNatoBox'); if (lblBox) lblBox.textContent = letraHuso;
+    lblDisp.textContent = `${cerHoraObjetivoIAB} ${letraHuso}`;
+    const lblBox = document.getElementById('lblHusoNatoBox');
+    if (lblBox) lblBox.textContent = letraHuso;
   }
   if (lblTitulo) {
     lblTitulo.textContent = (cerModoIAB === 'izado') ? '🎯 HORA DEL IZADO:' : '🎯 HORA DEL ARRIADO:';
   }
+  
+  // Huso natural estimado por longitud geográfica
+  const husoNatOffset = estimarHusoNauticoPorLongitud(cerPosicionLon);
+  const letraNat = obtenerLetraHusoIAB(husoNatOffset);
+  const signoNat = husoNatOffset >= 0 ? '+' : '';
+  const strHusoNat = `UTC${signoNat}${husoNatOffset} (${letraNat})`;
+  
+  // Ocaso puro en UTC
+  const utDec = calcularHoraOcasoUTC_Decimal(cerPosicionLat, cerPosicionLon, new Date());
+  let strOcasoUtc = '--:-- Z';
+  if (utDec !== null) {
+    const hhU = Math.floor(utDec);
+    const mmU = Math.round((utDec - hhU) * 60);
+    const finalHU = (hhU + Math.floor(mmU / 60)) % 24;
+    const finalMU = mmU % 60;
+    strOcasoUtc = String(finalHU).padStart(2, '0') + ':' + String(finalMU).padStart(2, '0') + ' Z';
+  }
+  
+  const elHusoGps = document.getElementById('lblHusoEstimadoGps');
+  const elOcasoGps = document.getElementById('lblOcasoUtcGps');
+  if (elHusoGps) elHusoGps.textContent = strHusoNat;
+  if (elOcasoGps) elOcasoGps.textContent = strOcasoUtc;
+  
+  const elHusoCoord = document.getElementById('lblHusoEstimadoCoord');
+  const elOcasoCoord = document.getElementById('lblOcasoUtcCoord');
+  if (elHusoCoord) elHusoCoord.textContent = strHusoNat;
+  if (elOcasoCoord) elOcasoCoord.textContent = strOcasoUtc;
+
   if (cerModoIAB === 'izado' || (cerModoIAB === 'arriado' && cerFuenteOcasoIAB === 'manual')) {
     if (rowPos) rowPos.style.display = 'none';
   } else {

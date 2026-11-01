@@ -149,7 +149,7 @@
     <div id="separadorProgOpc" style="height: 14px; margin: 12px 0;" aria-hidden="true"></div>
 
     <!-- BLOQUE INDEPENDIENTE: OPCIONES -->
-    <div class="card" id="cardOpciones">      <div class="card-title">🎵 Opciones</div>             <div class="barra" style="margin-bottom: 16px;">  <div class="barra-label">🎺 Voz de Señales a la Bandera:</div>  <div class="barra-botones">    <button class="barra-btn" onclick="setSenales(true)"><span class="dot" id="dotSenalesSi"></span>Sí</button>    <button class="barra-btn" onclick="setSenales(false)"><span class="dot" id="dotSenalesNo"></span>No</button>  </div></div>
+    <div class="card" id="cardOpciones">      <div class="card-title">🎵 Opciones</div>             <div class="barra" style="margin-bottom: 16px;">  <div class="barra-label">🎺 Voz Señales...:</div>  <div class="barra-botones">    <button class="barra-btn" onclick="setSenales(true)"><span class="dot" id="dotSenalesSi"></span>Sí</button>    <button class="barra-btn" onclick="setSenales(false)"><span class="dot" id="dotSenalesNo"></span>No</button>  </div></div>
                         <div class="barra">  <div class="barra-label">💂 Guardia Militar:</div>  <div class="barra-botones">    <button class="barra-btn" onclick="setGuardia(true)"><span class="dot" id="dotGuardiaSi"></span>Sí</button>    <button class="barra-btn" onclick="setGuardia(false)"><span class="dot" id="dotGuardiaNo"></span>No</button>  </div></div>                        <div class="barra" id="seccionPresenten" style="display: none;">        <div class="barra-label">🎙️ Orden Presenten:</div>        <div class="barra-botones">          <button class="barra-btn" onclick="setPresenten('voz')"><span class="dot" id="dotPresentenVoz"></span>Voz</button>          <button class="barra-btn" onclick="setPresenten('corneta')"><span class="dot" id="dotPresentenCorneta"></span>Corneta</button>        </div>      </div>      <div style="padding: 10px; background: #0b152d; border-radius: 8px; border-left: 3px solid #10b981; margin-bottom: 12px;">        <div style="font-size: 11px; font-weight: 800; color: #38bdf8; margin-bottom: 8px;">🎵 Audio:</div>        <div class="btn-grid">          <button class="action-btn" onclick="setAcompañamiento('himno')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompHimno"></span>Himno</button>          <button class="action-btn" onclick="setAcompañamiento('corneta')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompCorneta"></span>Corneta</button>          <button class="action-btn" onclick="setAcompañamiento('chifle')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompChifle"></span>Chifle</button>          <button class="action-btn" onclick="setAcompañamiento('himno_chifle')" style="padding: 8px 12px; font-size: 11px;"><span class="dot" id="dotAcompHimnoChifle"></span>Himno+Chifle</button>        </div>      </div>
       <!-- SELECCIÓN Y SECUENCIA DE HIMNOS (SOLO EN MODO HIMNO O HIMNO+CHIFLE) -->
       <div id="seccionHimnos" style="display: none; padding: 12px; background: #070d1e; border: 1.5px solid #1e3a8a; border-radius: 8px; margin-bottom: 12px;">
@@ -162,11 +162,11 @@
         <div id="listaHimnosActivos" style="display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px;"></div>
 
         <!-- CONTROLES PARA AÑADIR HIMNO EXTRANJERO -->
-        <div style="display: flex; gap: 6px; align-items: center;">
-          <select id="selHimnoExtranjero" style="flex: 1; background: #0b152d; border: 1.5px solid #38bdf8; border-radius: 6px; color: #fff; font-size: 12px; font-weight: 700; padding: 6px 8px;">
+        <div style="display: flex; gap: 6px; align-items: center; width: 100%; box-sizing: border-box;">
+          <select id="selHimnoExtranjero" style="flex: 1 1 auto; min-width: 0; max-width: calc(100% - 85px); background: #0b152d; border: 1.5px solid #38bdf8; border-radius: 6px; color: #fff; font-size: 12px; font-weight: 700; padding: 6px 8px; box-sizing: border-box; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
             <option value="">-- Seleccionar país para añadir --</option>
           </select>
-          <button type="button" class="action-btn primary" onclick="agregarHimnoExtranjero()" style="padding: 6px 12px; font-size: 11.5px; font-weight: 800; white-space: nowrap;">
+          <button type="button" class="action-btn primary" onclick="agregarHimnoExtranjero()" style="flex: 0 0 auto; width: 78px; padding: 6px 4px; font-size: 11.5px; font-weight: 800; white-space: nowrap; box-sizing: border-box; text-align: center;">
             ➕ Añadir
           </button>
         </div>

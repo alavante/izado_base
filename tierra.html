@@ -182,7 +182,7 @@
       <div class="puntos-grid" id="puntosGrid"></div>
     </div>    <!-- SECUENCIA CONTINUA (P2-P8) -->
     <div class="card" id="cardSecuenciaContinua" style="display: none;">
-      <button class="action-btn primary" id="btnSecuenciaContinua" style="width: 100%; padding: 16px; background: #0284c7; border-color: #38bdf8;" onclick="iniciarAuto()">▶️ SECUENCIA CONTINUA (P2-P8)</button>
+      <button class="action-btn primary" id="btnSecuenciaContinua" style="width: 100%; padding: 16px; background: #0284c7; border-color: #38bdf8;" onclick="iniciarAuto()">SECUENCIA CONTINUA</button>
     </div>
     <!-- PIE DE PÁGINA: FIRMA Y VERSIÓN -->
     <div style="text-align: center; margin-top: 25px; margin-bottom: 20px; padding: 12px; color: #64748b; font-family: monospace; font-size: 11px; letter-spacing: 0.5px;">
@@ -1014,15 +1014,16 @@ function renderPuntos() {
   
   const { strT0, strT5 } = obtenerHorasCalculadasCeremonial();
   
+  const acompLabel = (acompañamiento === 'chifle' ? 'Chifle (20s)' : (acompañamiento === 'himno' ? 'Himno' : (acompañamiento === 'himno_chifle' ? 'Himno + Chifle' : (acompañamiento === 'sin' ? 'Sin acompañamiento' : acompañamiento))));
   const labels = {
-    1: 'P1: Señales a la bandera (' + strT5 + ')',
-    2: 'P2: Orden de Firmes (Corneta) (' + strT0 + ')',
-    3: 'P3: Orden de Presenten Armas(' + modalidadPresenten + ')',
-    4: 'P4: Ejecutiva Himno Nacional',
-    5: 'P5: ' + acompañamiento,
-    6: 'P6: Descansen Armas',
-    7: 'P7: Envainen Armas',
-    8: 'P8: Oración (' + oracion + ')'
+    1: 'Señales a la bandera (' + strT5 + ')',
+    2: 'Orden de firmes (Corneta) (' + strT0 + ')',
+    3: 'Orden de presenten armas (' + modalidadPresenten + ')',
+    4: 'Ejecutiva Himno Nacional',
+    5: acompLabel,
+    6: 'Descansen armas',
+    7: 'Envainen armas',
+    8: 'Oración (' + oracion + ')'
   };
   
   for (let p of cerPuntosActivosManualIAA) {
